@@ -1,0 +1,208 @@
+<!-- <div class="modal fade" id="staticBackdrop"   tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true"> -->
+<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" *ngIf="isModalVisible">
+  <div class="modal-content">
+    <!-- <span #h1></span> -->
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="dv_skelton_load_branches overflow-hidden" *ngIf="IsLoading">
+      <ngx-skeleton-loader [theme]="{ height: '300px', margin: '0 0 10px 0' }" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '15px', width: '50%', margin: '0 0 10px 15px' }"
+        appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '15px', width: '60%', margin: '0 0 10px 15px' }"
+        appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '15px', width: '55%', margin: '0 0 10px 15px' }"
+        appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{
+            height: '30px',
+            width: '18%',
+            position: 'absolute',
+            margin: '-15px 0px 10px 61px'
+          }" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '6px', width: '80%', margin: '0px 0 0 15px' }"
+        appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '6px', width: '80%', margin: '0px 0 0 15px' }"
+        appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '6px', width: '70%', margin: '0px 0 10px 15px' }"
+        appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '15px', width: '40%', margin: '0 0 10px 15px' }"
+        appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '6px', width: '70%', margin: '0px 0 10px 15px' }"
+        appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '6px', width: '70%', margin: '0px 0 10px 15px' }"
+        appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '200px', margin: '0 0 10px 0' }" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '6px', width: '80%', margin: '0px 0 0 15px' }"
+        appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '6px', width: '80%', margin: '0px 0 0 15px' }"
+        appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '6px', width: '70%', margin: '0px 0 10px 15px' }"
+        appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '15px', width: '40%', margin: '0 0 10px 15px' }"
+        appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '6px', width: '70%', margin: '0px 0 10px 15px' }"
+        appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '6px', width: '70%', margin: '0px 0 10px 15px' }"
+        appearance="line"></ngx-skeleton-loader>
+    </div>
+
+    <div class="modal-body spme-style-1 p-0" *ngIf="!IsLoading">
+      <div id="sd-parent" class="dv_sub_cat_banners pt-0">
+        <video _ngcontent-hqf-c177="" preload="" autoplay="" muted="" loop="" playsinline="" poster="" controlslist="nofullscreen" class="d-none d-md-block d-lg-block" style="width: 100%; height: 240px; object-fit: cover">
+          <source _ngcontent-hqf-c177="" src="https://ik.imagekit.io/mirrorskit/assets/Academy/mia-desktop.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="container dv_w_100_desktop px-4">
+        <div class="dv_subscategory_per_service_wrapper border-0">
+          <div class="d-flex d-flex align-items-center justify-content-between">
+            <div class="dv_subscategory_per_service_name mt-0 text-uppercase font-16 py-2 mt-3">
+              {{ Service.name }}
+            </div>
+            <!-- <span *ngIf="!IsAdded[Service.master_service_id]"> <button type="button"
+                class="btn btn-default dv_add_package"
+                (click)="AddToCart(Service.master_service_id,1,Service.original_price,Service.discount_price+Service.original_price+60)">
+                <div class="dv_btn_loading_wrap" [ngClass]="{'d-block': isDisable[Service.master_service_id]==true}">
+                  <div class="dv_btn_loading"></div>
+                </div>add
+              </button></span> -->
+          </div>
+
+          <div class="d-flex align-items-center pt-1">
+            <div class="d-flex">
+              <div class="d-flex sv1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                  fill="rgba(84,84,84,1.00)" stroke="currentColor" stroke-width="0 " stroke-linecap="round"
+                  stroke-linejoin="round" class="feather feather-star">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                  </polygon>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <p class="mb-0 mx-1 font-12">{{Service.recommended?Service.recommended:'4.90 (1.2K)'}}</p>
+            </div>
+          </div>
+          <ul class="dv_sub_service_rate_ul">
+            <li class="font-16">
+              AED {{ Service.original_price }}
+              <span class="text-decoration-line-through">{{
+                Service.original_price + 1000
+                }}</span>
+            </li>
+            <li class="fw-bold">-</li>
+            <li class="mb-1 label-main font-12 ff-gotham-bold">{{ Service.days | uppercase }}/{{ Service.course_duration | uppercase }}</li>
+          </ul>
+          <hr />
+          <div [innerHTML]="senitizerFunction(Service.course_overview)"></div>
+        </div>
+      </div>
+      <div class="container-fluid w-100 bg-black p-4 mb-4 text-white">
+        <div class="row" [innerHTML]="senitizerFunction(Service.overview_images)">
+        </div>
+      </div>
+      <div class="container dv_w_100_desktop px-4">
+        <div class="row" *ngIf="Service.expert_banner_img">
+          <div class="col-12">
+            <ik-image path={{Service.expert_banner_img}} class="d-block mx-auto img-fluid"></ik-image>
+          </div>
+        </div>
+        <div [innerHTML]="safeToolsImages"> </div>
+
+        <div class="dv_page_details_points_ul_head border-0">
+          <h3 class="font-18 ff-gotham-bold text-uppercase mt-5">
+            Course Structure
+          </h3>      
+          <ul class="dv_page_details_points bulletnumber" [innerHTML]="Service.course_structure"></ul>
+        </div>
+
+        <div *ngIf="Service.service_benefits">
+          <div class="bg-light p-4">
+            <h5 class="font-18 ff-gotham-bold text-uppercase pt-3">
+              Benefits of Course
+            </h5>
+            <ul class="dv_sub_service_descrition_ul ul-2 list-style-none icon-text-list" [innerHTML]="senitizerFunction(Service.service_benefits)">
+            </ul>
+          </div>
+        </div>
+        <div class="bg-light p-4 my-3">
+          <div [innerHTML]="senitizerFunction(Service.course_attends)"></div>
+          <!-- <h5 class="font-16 ff-gotham-bold text-uppercase pt-3" *ngIf="Service.course_attends">
+            Who can attend this course?
+          </h5>
+          <ul class="dv_sub_service_descrition_ul ul-2" [innerHTML]="Service.course_attends">
+          </ul> -->
+        </div>
+
+        <ng-container *ngIf="Service.certification_img && Service.category_id != 46; else paymentPlan">
+          <div class="certificate-wrap my-3" *ngIf="Service.certification_img">
+            <h5 class="font-18 ff-gotham-bold text-uppercase py-3 text-center">
+              Certification
+            </h5>
+            <div class="d-flex align-items-center justify-content-center" [innerHTML]="senitizerFunction(Service.certification_img)">
+              <!-- <div class="col-md-4">
+              <img src="https://ik.imagekit.io/7mkjuzyn8/assets/Academy/Redesign-Booking-Flow/spmu_service/microblading/certification_img1.png" alt="" class="img-fluid" />
+            </div>
+            <div class="col-md-8">
+              <img src="https://ik.imagekit.io/7mkjuzyn8/assets/Academy/Redesign-Booking-Flow/spmu_service/microblading/certification_img2.png" alt="" class="img-fluid" />
+            </div> -->
+            </div>
+          </div>
+        </ng-container>
+        <ng-template #paymentPlan>
+          <div [innerHTML]="Service.certification_img"></div>
+        </ng-template>
+
+        <div class="dv_page_details_points_ul_head">
+          <h4 class="font-18 ff-gotham-bold text-uppercase text-center">Frequently Asked Questions</h4>
+          <div id="accordionExample" class="accordion">
+            <div class="card mb-3" *ngFor="let item of faqList; index as i">
+              <div class="card-head">
+                <h2
+                  class="mb-0 font-12 collapsed ff-gotham-bold px-4 py-3 dv_accodion_h2"
+                  id="heading{{ i }}"
+                  data-toggle="collapse"
+                  attr.data-target="#collapse{{ i }}"
+                  aria-expanded="false"
+                  attr.aria-controls="collapse{{ i }}"
+                >
+                  {{ item.service_question }}
+                </h2>
+              </div>
+              <!-- <div class="card-header dv_freqntly_question" id="heading{{ i }}" data-toggle="collapse"
+                attr.data-target="#collapse{{ i }}" aria-expanded="false" attr.aria-controls="collapse{{ i }}">
+                {{ item.service_question }}
+              </div> -->
+              <div id="collapse{{ i }}" class="collapse" attr.aria-labelledby="heading{{ i }}"
+                data-parent="#accordionExample">
+                <div class="card-body dv_freqntly_answer">
+                  {{ item.service_answer }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="my-2 pt-3">
+          <script
+            src="https://static.elfsight.com/platform/platform.js"
+            data-use-service-core
+            defer
+          ></script>
+          <div
+            class="elfsight-app-3950f148-239c-4d98-98e2-7593423510d1"
+            data-elfsight-app-lazy
+          ></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button (click)="enroll()" data-dismiss="modal" class="dv_fullwidth_btn"
+        style="background-color: #000000 !important">
+        Enroll Now
+      </button>
+    </div>
+  </div>
+</div>

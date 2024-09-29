@@ -1,0 +1,8 @@
+<div class="form-group col-md-6">
+    <label for="country">Country</label>
+    <select class="form-control" id="my-select" name="country"
+        (change)="onCountryChange($event)">
+        <option *ngFor="let item of countryLIst" [value]="item.label">
+            {{item.CountryName}}</option>
+    </select>
+</div>

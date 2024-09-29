@@ -1,0 +1,14 @@
+.dv_offer_pagination > span.swiper-pagination-bullet {
+    background: #adadad !important;
+}
+.dv_offer_pagination > span.swiper-pagination-bullet-active {
+    background: #7c00ff !important;
+}
+.w-90 {
+    width: 90%;
+}
+.seacrch-ic{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}

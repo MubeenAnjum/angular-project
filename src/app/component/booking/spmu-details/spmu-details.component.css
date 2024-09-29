@@ -1,0 +1,291 @@
+.slider-2 img {
+  padding: 3em;
+  background: #efefef;
+  border-radius: 10px;
+}
+button.btn.btn-default.dv_add_package {
+  font-family: "OpenSauceOneBold";
+  font-size: 14px;
+  margin: 15px 0 0 0;
+  background: #ffffff;
+  color: #4500ff;
+  text-transform: capitalize;
+  padding: 2px 19px;
+  box-shadow: rgb(15 15 15 / 6%) 0px 4px 8px;
+  border: 1px solid #ebebeb9e;
+  position: static;
+}
+
+.dv_subscategory_per_service_wrapper.border-0 {
+  border-bottom: 2px solid #0000000d !important;
+}
+
+/*  replace style from style .css for this classes  END*/
+
+/*NEW STYLES STARTS */
+.modal-sub-each img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 11px;
+  margin-top: 10px;
+}
+span.dv_day_highlight {
+  font-weight: 700;
+  font-size: 1em;
+}
+
+.dv_per_day_procedure {
+  margin-top: 1em;
+}
+
+ul.dv_page_details_points.bulletnumber {
+  margin-top: 1em;
+}
+
+/* ul.dv_sub_service_descrition_ul{
+  width: 100%;
+}
+ul.dv_sub_service_descrition_ul li{
+  padding-left: 0 !important;
+}
+ul.dv_sub_service_descrition_ul>li::before{
+  content: none !important;
+} */
+.dv_subscategory_per_service_name {
+  font-weight: 600;
+}
+ul.dv_sub_service_rate_ul li:nth-child(2) {
+  color: #000000;
+  font-family: "OpenSauceOneBold";
+  text-transform: lowercase;
+}
+/* ul.dv_sub_service_descrition_ul li {
+    padding-left: 0 !important;
+    font-family: 'OpenSauceOne';
+} */
+.progress-bar {
+  background-color: #000000;
+}
+.progress {
+  height: 5px;
+}
+.rv-sb {
+  font-size: 12px;
+}
+.rating-main {
+  font-size: 2em;
+}
+.filtr-rev {
+  border: 1px solid #b9b9b9;
+  margin-right: 1em;
+  border-radius: 10px;
+  color: rgb(117, 117, 117);
+  font-size: 0.8em;
+}
+.rating-box-po {
+  padding: 2px 8px;
+  background: black;
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+}
+.br-bb {
+  border-bottom: 1px solid #00000024;
+  margin-bottom: 1em;
+}
+.review p {
+  font-size: 0.8em;
+}
+/* 
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+
+.on-im-tx {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; 
+  text-align: center;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.on-im-tx p {
+  margin: 0;
+} */
+
+/*NEW STYLES END */
+
+.image-container.sub-points ul li {
+  margin-top: 0.5em;
+  font-size: 16px;
+  margin-bottom: 0.5em;
+
+  font-weight: 200;
+}
+
+.image-container.sub-points ul li span {
+  font-weight: bold;
+}
+.dv_page_details_points_ul_head > h4 {
+  font-family: "OpenSauceOneBold";
+  font-size: 18px;
+  margin: 15px 0;
+}
+.image-container.sub-points ul {
+  padding: 15px;
+}
+@font-face {
+  font-family: "OpenSauceOne" !important;
+  src: url("../../../../assets/fonts/OpenSauceOne-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "OpenSauceOneBold" !important;
+  src: url("../../../../assets/fonts/OpenSauceOne-Bold.ttf") format("woff");
+}
+body {
+  font-family: "OpenSauceOne", sans-serif !important;
+}
+.modal-sub-each span {
+  font-size: 15px;
+  font-weight: 700;
+  color: black;
+}
+.bg-black {
+  background: #000000 !important;
+}
+
+/* Container for the image and text */
+.hover-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Wrapper for the image to contain the border */
+.image-wrapper {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* The image itself */
+.hover-image {
+  width: 100%;
+  height: auto;
+  transition: transform 0.4s ease;
+  border-radius: inherit;
+}
+
+/* The white border inside the image */
+.image-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* Ensures the border is inside the image */
+  border: 1px solid white;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  border-radius: 0;
+  z-index: 1;
+}
+
+/* Hover effect: subtle zoom and internal white border */
+.image-wrapper:hover .hover-image {
+  transform: scale(1.05);
+}
+
+.image-wrapper:hover::before {
+  opacity: 1;
+  transform: scale(0.95); /* Adjusts the border to stay inside the image */
+}
+
+/* Styling for the main image */
+#mainImage {
+  transition: all 0.4s ease;
+}
+
+/* Thumbnail styling */
+.thumbnail {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+  border: 2px solid #000; /* Optional: add a border effect on hover */
+}
+
+/* Ensure that thumbnails have consistent sizes */
+.thumbnail {
+  max-width: 100%;
+  max-height: 100px; /* You can adjust the height based on your preference */
+  object-fit: cover;
+}
+
+ul.bulletnumber > li {
+  padding: 0 0 7px 40px !important;
+}
+
+.pay-card {
+  background: white;
+  border-radius: 12px;
+  border-left: 4px solid black;
+  box-shadow: 1px -1px 9px 2px #00000012;
+}
+.process-info {
+  max-width: 800px;
+  margin: auto;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 12px;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.process-info h3 {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.process-info p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.process-info .note {
+  background-color: #f9f9f9;
+  border-left: 5px solid #000000;
+  padding: 1rem;
+  font-style: italic;
+  color: #636363;
+  margin-top: 1rem;
+}
+
+.process-info .badge {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 1rem;
+}
+
+.process-info .badge img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}

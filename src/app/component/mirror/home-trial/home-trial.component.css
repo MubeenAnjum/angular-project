@@ -1,0 +1,65 @@
+.dv_offer_pagination > span.swiper-pagination-bullet {
+    background: #adadad !important;
+}
+.dv_offer_pagination > span.swiper-pagination-bullet-active {
+    background: #7c00ff !important;
+}
+.offerslider > .swiper-button-prev {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: -14px 0 0 0;
+    color: #ffffff;
+}
+.offerslider > .swiper-button-next {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: -14px 0 0 0;
+    color: #ffffff;
+}
+.services_based_slider > .swiper-button-prev {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: -15px 0 0 0;
+    color: #ffffff;
+}
+.services_based_slider > .swiper-button-next {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: -15px 0 0 0;
+    color: #ffffff;
+}
+.reviewslidernew > .swiper-button-prev {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: -15px 0 0 0;
+    color: #000000;
+}
+.reviewslidernew > .swiper-button-next {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: -15px 0 0 0;
+    color: #000000;
+}
+.teamslidernew > .swiper-button-prev {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: -15px 0 0 0;
+    color: #000000;
+}
+.teamslidernew > .swiper-button-next {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: -15px 0 0 0;
+    color: #000000;
+}
+.w-90 {
+    width: 90%;
+}

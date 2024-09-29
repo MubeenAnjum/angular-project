@@ -1,0 +1,119 @@
+<app-header-create></app-header-create>
+<div class="container">
+
+    <section class="registration py-5 mt-lg-5 ">
+        <div class="height-30"></div>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6 my-auto" style="padding-top: 30px;">
+                    <ik-image path='assets/Academy/Redesign-Booking-Flow/quote.png' class="quote" alt=""></ik-image>
+                    <h3>
+                        Discover the premier beauty courses available in Dubai.
+                    </h3>
+                </div>
+
+                <div class="col-md-6">
+
+                    <form class="reg-form">
+                        <div class="row">
+                            <div class="col-12">
+                                <h2 class=" mb-4">Student Registration Form</h2>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="studentName">Student Name</label>
+                                <input type="text" class="form-control" id="studentName" [(ngModel)]="StudentDetails.name" name="name" placeholder="Enter your name" (change)="onNameChange($event)" required>
+                                <span *ngIf="nameError" class="text-danger d-block font-12 mt-2">
+                                    <svg style=" float: left; margin: 0 10px 0 0; " xmlns="http://www.w3.org/2000/svg"
+                                        width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
+                                        </path>
+                                        <line x1="12" y1="9" x2="12" y2="13"></line>
+                                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                    </svg> Enter valid Name </span>
+                            </div>
+                               
+                            <div class="form-group col-md-6">
+                                <label for="mobileNumber">Mobile Number</label>
+                                <div class="input-group">
+                                  <div class="input-group-prepend">
+                                    <span class="iinput-group-addon dv_971_mobile_code" style="line-height: 11px !important;font-size: 12px !important;">{{ selectedCountryCode }}</span>  
+                                </div>
+                                  <input 
+                                    type="tel" 
+                                    name="mobile_number" 
+                                    [(ngModel)]="StudentDetails.mobile_number" 
+                                    id="studentNumber" 
+                                    class="form-control" 
+                                    placeholder="5X XXX XXXX" 
+                                    (ngModelChange)="validateMobileNumber($event)" 
+                                    required
+                                  />
+                                </div>
+                                <span *ngIf="mobileNumberError" class="text-danger d-block font-12 mt-2">
+                                  <svg style="float: left; margin: 0 10px 0 0;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                                    <line x1="12" y1="9" x2="12" y2="13"></line>
+                                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                  </svg>
+                                  Please enter only numbers.
+                                </span>
+                              </div>
+                
+                            <div class="form-group col-md-6" >
+                                <label for="course">Course</label>
+                                <select class="form-control" id="course" [(ngModel)]="StudentDetails.GradeId" name="course" (change)="onCourseChange($event)">
+                                    <!-- <option value="" disabled selected>Select a course</option> -->
+                                    <option *ngFor="let item of courseList" [value]="item.GradeId">{{item.GradeName}}</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="country">Country</label>
+                                <select class="form-control" id="country" [(ngModel)]="StudentDetails.CountryId" name="country"
+                                    (change)="onCountryChange($event)">
+                                    <option *ngFor="let item of countryList" [value]="item.CountryId">
+                                        {{item.CountryName}}</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-6 d-flex flex-wrap">
+                                <div class="col-12 p-0">
+                                    <label>Gender</label>
+                                </div>
+                                <div class="form-check mr-1">
+                                    <input class="form-check-input px-1" type="radio" name="gender" id="male"
+                                        value="male" [(ngModel)]="StudentDetails.gender">
+                                    <label class="form-check-label" for="male">Male</label>
+                                </div>
+                                <div class="form-check mr-1">
+                                    <input class="form-check-input px-1" type="radio" name="gender" id="female"
+                                        value="female" [(ngModel)]="StudentDetails.gender">
+                                    <label class="form-check-label" for="female">Female</label>
+                                </div>
+                                <div class="form-check mr-1">
+                                    <input class="form-check-input px-1" type="radio" name="gender" id="other"
+                                        value="other" [(ngModel)]="StudentDetails.gender">
+                                    <label class="form-check-label" for="other">Other</label>
+                                </div>
+                                <div class="form-check mr-1">
+                                    <input class="form-check-input px-1" type="radio" name="gender" id="not-disclose"
+                                        value="not-disclose" [(ngModel)]="StudentDetails.gender">
+                                    <label class="form-check-label" for="not-disclose">Prefer not to disclose</label>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="javascript:void(0);" type="submit" (click)="SaveStudentDetail()"
+                            class="btn btn-default  mt-0"
+                            [ngClass]="{'active':this.StudentDetails.name!=''}">Submit</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container"> 
+        <div class="elfsight-app-4f5335ca-4b76-492b-9085-6eb81e0da40d" data-elfsight-app-lazy></div>
+    </div>
+</div>
+<app-footer-new ></app-footer-new>

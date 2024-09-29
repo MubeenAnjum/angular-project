@@ -1,0 +1,106 @@
+@import url('https://fonts.cdnfonts.com/css/helios-antique');
+@import url('https://fonts.cdnfonts.com/css/brittany-signature');
+@import url('https://fonts.cdnfonts.com/css/archivo');
+@import url('https://fonts.cdnfonts.com/css/adam-2');
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css");
+@font-face { font-family: 'Brown Sugar', sans-serif; src: url('./font/brown-sugar.ttf');}
+@font-face {
+    font-family: "Asmelina Harley";
+    src: url("https://db.onlinewebfonts.com/t/c56d4721c0ed78e62202b4430d0a955d.eot");
+    src: url("https://db.onlinewebfonts.com/t/c56d4721c0ed78e62202b4430d0a955d.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/c56d4721c0ed78e62202b4430d0a955d.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/c56d4721c0ed78e62202b4430d0a955d.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/c56d4721c0ed78e62202b4430d0a955d.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/c56d4721c0ed78e62202b4430d0a955d.svg#Asmelina Harley")format("svg");
+}
+html, body { margin: 0; padding:0; font-family: 'Helios Antique', sans-serif; font-size:16px; font-weight:400; scroll-behavior:smooth; }
+a:hover { text-decoration:none; }
+.z-index-0 { z-index:0 !important; }
+.z-index-1 { z-index:1 !important; }
+.dv_why_package { padding:140px 0; }
+.dv_why_package_heading { font-size: 36px; color: #808080; text-transform: uppercase; font-weight: 700; line-height: 40px; margin: 0 0 30px 0; }
+.dv_why_package_heading>span { color: #965633; display: block; font-size: 56px; }
+ul.dv_why_pack_ul { list-style-type: none; margin: 0; padding: 0; }
+ul.dv_why_pack_ul>li { margin: 0 0 30px 0; color: #808080; padding: 0 0 0 50px; }
+ul.dv_why_pack_ul>li>span { background: #965633; display: inline-block; width: 40px; height: 40px; text-align: center; font-weight: 700; color: #ffffff; line-height: 39px; border-radius: 50%; position: absolute; left: 50px; }
+.dv_why_package_heading_p { font-size: 15px; margin: 0 0 30px 0; }
+a.dv_why_book_now { background: #FF0000; color: #ffffff; font-weight: 700; font-size: 21px; padding: 15px 55px; border-radius: 20px; margin: 50px 0 20px 0; display: inline-block; line-height: 30px; -webkit-animation: mirroreffects 1.5s ease-in-out infinite both; animation: mirroreffects 1.5s ease-in-out infinite both; }
+a.dv_why_book_now>span { display: block; font-size: 40px; }
+.dv_dmof_txt { font-size: 18px; text-transform: uppercase; color: #ff0000; font-weight: 600; }
+.dv_latest_trends { background: #000000; padding: 40px 0; }
+h3.dv_latest_trends_head { font-size: 78px; color: #E0B79B; font-family: 'Brittany Signature', sans-serif; text-align: center; text-transform:capitalize; padding: 40px; }
+.swiper-pagination-bullets.swiper-pagination-horizontal{bottom:10px;left:0!important;width:auto!important;right:0!important;top:-10px!important}
+.swiper-slide.swiper-slide-visible.swiper-slide-active{transition:all .3s!important}
+.swiper-slide-visible.swiper-slide-next,.swiper-slide-visible.swiper-slide-prev{transition:all .5s!important}
+.swiper-slide img{display:block;width:100%;object-fit:cover}
+.swiper-controller{position:relative;display:flex;margin:30px auto 0 auto;width:484px;height:45px;line-height:0}
+.swiper-button-next{margin-right:150px}
+.swiper-button-prev{margin-left:150px}
+.slider-arrow{box-shadow:0 0 10px rgba(0,0,0,.3);border-radius:50%;width:30px!important;height:30px!important;cursor:pointer;background:#fff}
+.slider-arrow::after{content:""}
+.slider-arrow .icon{position:relative;z-index:11111111111;color:#000;font-size:16px;font-weight:500;pointer-events:all;cursor:pointer}
+.swiper-pagination{transform:translateY(50%)!important}
+.swiper-pagination-bullet{width:10px!important;height:4px!important;border-radius:4px!important;transition:all .3s;background:#ffffff !important;}
+.swiper-pagination-bullet-active{width:20px!important;background:#fff}
+.dv_price_table { padding:60px 0; }
+.dv_video_black { padding:0 0 60px 0; }
+h4.dv_we_accept_head { margin: 0; font-size: 18px; text-align: center; color: #58595B; font-family: Rubik; text-transform: capitalize; }
+.dv_mirrors_know_heading { font-size: 61px; color: #000000; text-transform: uppercase; font-weight: 700; line-height: 48px; margin: 0 0 30px 0; }
+.dv_mirrors_know_heading>span { color: #999999; display: block; font-size: 40px; }
+ul.dv_mirrors_know_ul { list-style-type: none; margin: 0; padding: 0; }
+ul.dv_mirrors_know_ul>li { margin: 0 0 30px 0; color: #808080; padding: 0 0 0 60px; }
+ul.dv_mirrors_know_ul>li>span { background: #965633; display: inline-block; width: 40px; height: 40px; text-align: center; font-weight: 700; color: #ffffff; line-height: 39px; border-radius: 50%; position: absolute; left: 15px; }
+ul.dv_mirrors_know_ul>li>h3 { font-size: 20px; font-weight: 700; color: #000000; padding: 0; }
+h4.dv_thousand_review_head { text-align: center; font-weight: 700; font-size:40px; font-family: 'Archivo', sans-serif; margin:0 0 30px 0; }
+.border-radius-20 { border-radius:20px; }
+h4.dv_branch_name { font-family: 'Archivo', sans-serif; text-align: center; margin: 0 0 15px 0; }
+p.dv_branch_address { color: #999999; font-family: 'Archivo', sans-serif; text-align: center; font-size: 14px; }
+a.dv_branch_number { color: #000000; font-family: 'Archivo', sans-serif; text-align: center; font-size: 18px; display:block; }
+a.dv_branch_whatsapp { display: block; margin: 15px auto; text-align: center; }
+a.dv_branch_whatsapp>img { width: 50px; }
+a.dv_branch_book { border: 2px solid #965633; display: block; text-align: center; padding: 10px 015px; border-radius: 15px; font-size: 24px; font-family: 'Archivo', sans-serif; color: #000000; text-transform: uppercase; }
+.dv_branch_499 { padding:60px 0; }
+h4.dv_thousand_review_head { text-align: center; font-weight: 100; font-size: 26px; margin: 0 0 30px 0; font-family: 'ADAM', sans-serif; text-transform: lowercase; color: #999999; }
+.panel-title > a:before {
+    float: right !important;
+    content:"+";
+    padding-right: 5px;
+    color: #965632;
+    font-size: 20px;
+}
+.panel-title > a.collapsed:before {
+    float: right !important;
+    font-size: 20px;
+    color: #965632;
+    content:"-";
+}
+.panel-title > a:hover, 
+.panel-title > a:active, 
+.panel-title > a:focus  {
+    text-decoration:none;
+}
+.dv_accodion { font-weight: 600; font-size: 16px; margin: 0; text-transform: lowercase; color: #333333; border-bottom: 1px solid #965633; display: block; text-align: left; padding: 15px 0; }
+.dv_accodion:hover, .dv_accodion:focus { color:#333333 !important; }
+.dv_accodion_body { padding:15px 0; color:#999999; }
+.dv_frequrently_asked { padding:0 0 80px 0; }
+footer { padding: 30px 0; background: #000000; color: #ffffff; text-align: center; }
+.dv_slider { background: rgb(146,122,111); background: linear-gradient(90deg, rgba(146,122,111,1) 0%, rgba(112,94,82,1) 100%); padding:30px 0 0 0; }
+.dv_wrapper { padding: 74px 0 0 0; }
+@-webkit-keyframes mirroreffects{from{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:center center;transform-origin:center center;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}10%{-webkit-transform:scale(.91);transform:scale(.91);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}17%{-webkit-transform:scale(.98);transform:scale(.98);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}33%{-webkit-transform:scale(.87);transform:scale(.87);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}45%{-webkit-transform:scale(1);transform:scale(1);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}}@keyframes mirroreffects{from{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:center center;transform-origin:center center;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}10%{-webkit-transform:scale(.91);transform:scale(.91);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}17%{-webkit-transform:scale(.98);transform:scale(.98);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}33%{-webkit-transform:scale(.87);transform:scale(.87);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}45%{-webkit-transform:scale(1);transform:scale(1);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}}
+.dv_slider_content>h1 { text-transform: uppercase; color: #ffffff; font-size: 200px; font-family: 'Brown Sugar', sans-serif; }
+.dv_slider_content>h1>span { float: right; font-size: 50px; position: absolute; top: 135px; }
+.dv_slider_content>h1>div { color: #FFD2B3; text-transform: capitalize; font-size: 60px; font-family: "Asmelina Harley"; text-align: center; position: absolute; left: 0; right: 0; top: 178px; }
+a.dv_now_499_aed { background: #FF0000; color: #ffffff; font-weight: 700; font-size: 21px; padding: 15px 55px; border-radius: 20px; margin: 20px auto; display: inline-block; line-height: 30px; -webkit-animation: mirroreffects 1.5s ease-in-out infinite both; animation: mirroreffects 1.5s ease-in-out infinite both; }
+a.dv_now_499_aed>span { display: block; font-size: 40px; }
+.dv_slider_content>a.dv_book_now_service { border: 2px solid #FFDBC2; display: block; text-align: center; padding: 10px 15px; font-size: 24px; font-family: 'Archivo', sans-serif; color: #FFFFFF; text-transform: uppercase; width: 205px; margin: 0 auto; }
+.dv_slider_content>p { color: #FFDBC2; font-size: 18px; }
+.dv_slider_content { text-align: center; margin: -40px 0 0 0px; position: relative; }
+.dv_slider_content>ul { text-align: left; color: #ffffff; font-size: 15px; }
+.dv_slider_content>ul>li { padding: 0 100px 10px 0; color: #ffffff; position: relative; }
+.dv_slider_content>ul>li::marker { color: #FFD2B3; font-size: 26px; }
+.dv_slider_content>ul>li>span { float: right; position: absolute; right: 0; font-weight: 700; top: 11px; }
+.dv_slider_content>ul>li:nth-last-child(1) { border-top: 1px solid #FFD2B3; border-bottom: 1px solid #FFD2B3; font-weight: 700; text-transform: uppercase; color: #FFD2B3; padding:10px 0; font-size:18px;  }
+.dv_slider_content>ul>li:nth-last-child(1)::marker { font-size:0 !important; }
+.dv_slider_content>span { color: #FFDBC2; font-size: 18px; margin: 10px 0 0 0; display: block; }
+.dv_slider_content>ul>li:nth-last-child(1)>span::before { content: ''; width: 176px; height: 2px; background: #ff0000; position: absolute; top: 12px; }
+h5.dv_whatsa_include { color: #ffffff; text-transform: uppercase; font-size: 25px; margin: 20px 0; font-weight: 600; }

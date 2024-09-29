@@ -1,0 +1,352 @@
+<div class="dv_wrapper">
+    <app-header-create></app-header-create>
+
+    <div class="dv_content_wrapper pt-5 dv_pt_sub_pg">
+        <div class="height-50 d-none w-100 overflow-auto d-md-block"></div>
+        <div class="dv_category_left_img_right" id="coursesSection">
+          <div class="height-20 d-block w-100 overflow-auto"></div>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-5">
+                <div class="card bg-light p-4 border-0 border-radius-10">
+                  <div class="row">
+                    <div
+                      class="col-md-4 mb-3 col-4"
+                      *ngFor="let item of categoryList; index as i"
+                    >
+                      <a href="/service-detail/{{ item.slug }}">
+                        <ik-image
+                          [path]="
+                            item.icon_image
+                              ? item.icon_image
+                              : 'assets/Academy/Redesign-Booking-Flow/hair.png'
+                          "
+                          class="w-100 course-image"
+                        ></ik-image>
+                        <span
+                          class="font-10 d-block mt-2 text-center text-dark ff-gotham-bold"
+                          >{{ item.category_name }}</span
+                        >
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-7 d-none d-md-block">
+                <ik-image path='assets/Academy/Redesign-Booking-Flow/mia-right-side-img-2.png' alt="beautician courses in dubai" class="w-100"></ik-image>
+              </div>
+            </div>
+          </div>
+          <div class="height-20 d-block w-100 overflow-auto"></div>
+        </div>
+
+        <div class="dv_animation_logos pb-3">
+
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-2 col-4 text-center pb-2 my-auto">
+                        <ik-image path='assets/Academy/Redesign-Booking-Flow/accreditation/01.svg'
+                            class="align-middle img-fluid mx-auto d-block"></ik-image>
+                    </div>
+                    <div class="col-md-2 col-4 text-center pb-2 my-auto">
+                        <ik-image path='assets/Academy/Redesign-Booking-Flow/accreditation/02.svg'
+                            class="align-middle img-fluid mx-auto d-block"></ik-image>
+                    </div>
+                    <div class="col-md-2 col-4 text-center pb-2 my-auto">
+                        <ik-image path='assets/Academy/Redesign-Booking-Flow/accreditation/03.svg'
+                            class="align-middle img-fluid mx-auto d-block"></ik-image>
+                    </div>
+                    <div class="col-md-2 col-4 text-center pb-2 my-auto">
+                        <ik-image path='assets/Academy/Redesign-Booking-Flow/accreditation/04.svg'
+                            class="align-middle img-fluid mx-auto d-block"></ik-image>
+                    </div>
+                    <div class="col-md-2 col-4 text-center pb-2 my-auto">
+                        <ik-image path='assets/Academy/Redesign-Booking-Flow/accreditation/05.svg'
+                            class="align-middle img-fluid mx-auto d-block"></ik-image>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dv_about_mia">
+          <div class="container">
+            <div class="row justify-content-right">
+              <div class="col-md-7 mb-bg"></div>
+              <div class="col-md-5">
+                <h2 class="ff-gotham-bold text-uppercase font-40 text-center">
+                  mirrors institute of aesthetics
+                </h2>
+                <p class="ff-gotham-book text-center font-18">
+                  Our beauty school in Dubai is CIDESCO, CIBTEC, ITEC, DHA,
+                  KHDA-certified. All of our beautician courses are only
+                  available to women at our beauty training center. Mirrors
+                  Institute of Aesthetics will assist you in launching your
+                  career in the highly profitable beauty industry.
+                </p>
+                <p class="ff-gotham-book text-center font-18">
+                  Our Specialists have planned this course focusing on the
+                  techniques which are exceptionally required in the present
+                  current industry. The instructor will take you through all the
+                  steps of application and maintenance
+                </p>
+                <div class="disc-btn text-center">
+                  <a href="/about-us" class="dv_discover_btn mx-auto"
+                    >Discover More
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-right">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M5 12l14 0" />
+                      <path d="M15 16l4 -4" />
+                      <path d="M15 8l4 4" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dv_mia_video position-relative">
+
+            <video #myVideo id="myVideo" style="width: 100%; height: auto;" class="video d-none d-md-block d-lg-block"
+                preload="auto" autoplay muted="true" loop playsinline
+                poster="https://ik.imagekit.io/7mkjuzyn8/assets/Academy/Redesign-Booking-Flow/vide-bg.jpg"
+                controlsList="nofullscreen">
+                <source src="https://ik.imagekit.io/7mkjuzyn8/assets/Academy/mia-desktop.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <video #myVideo id="myVideo" style="width: 100%; height: auto;" class="video d-block d-md-none d-lg-none"
+                preload="auto" autoplay="autoplay" muted="true" loop="loop" playsinline poster=""
+                controlsList="nofullscreen">
+                <source src="https://ik.imagekit.io/7mkjuzyn8/assets/Academy/mia-mobile.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <div class="dv_video_caption_txt">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="dv_institute_box">
+                                <h5 class="ff-gotham-bold text-uppercase font-40 text-left">
+                                    our institute
+                                </h5>
+                                <p class="ff-gotham-book text-left font-18">
+                                    Your best possible start to a career in beauty, wellness &
+                                    spa therapy
+                                </p>
+                                <ul class="dv_our_institute_ul">
+                                    <li>
+                                        <a href="/register-new">Join MIA
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-right">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                <path d="M5 12l14 0" />
+                                                <path d="M15 16l4 -4" />
+                                                <path d="M15 8l4 4" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a [routerLink]="['/']" fragment="social_links">Follow us
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-right">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                <path d="M5 12l14 0" />
+                                                <path d="M15 16l4 -4" />
+                                                <path d="M15 8l4 4" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dv_mirrors_process_enviorement position-relative">
+          <div class="container-fluid w-100">
+            <div class="row">
+              <div class="col-md-3 col-lg-3 p-1">
+                <a href="/CIDESCO-Beauty-Therapy-Course/" class="custom-link">
+                  <img src="https://ik.imagekit.io/7mkjuzyn8/assets/Academy/Redesign-Booking-Flow/CIDESCO.png" alt="" class="img-fluid d-block mx-auto position-relative"/>
+                  <p class="image-badge">CIDESCO Beauty Therapy Course</p>
+                </a>
+              </div>
+              <div class="col-md-3 col-lg-3 p-1">
+                <a href="/CIBTAC-Beauty-Therapy-Course/" class="custom-link">
+                  <img src="https://ik.imagekit.io/7mkjuzyn8/assets/Academy/Redesign-Booking-Flow/CIBTAC.png" alt="" class="img-fluid d-block mx-auto position-relative"/>
+                  <p class="image-badge">CIBTAC Beauty Therapy Course</p>
+                </a>
+              </div>
+              <div class="col-md-3 col-lg-3 p-1">
+                <a href="/ITEC-Beauty-Therapy-Course/" class="custom-link">
+                  <img src="https://ik.imagekit.io/7mkjuzyn8/assets/Academy/Redesign-Booking-Flow/ITEC.png" alt="" class="img-fluid d-block mx-auto position-relative"/>
+                  <p class="image-badge">ITEC Beauty Therapy Course</p>
+                </a>
+              </div>
+              <div class="col-md-3 col-lg-3 p-1">
+                <a href="/DHA-Beauty-Therapy-Course/" class="custom-link">
+                  <img src="https://ik.imagekit.io/7mkjuzyn8/assets/Academy/Redesign-Booking-Flow/DHA.png" alt="" class="img-fluid d-block mx-auto position-relative"/>
+                  <p class="image-badge">DHA Beauty Therapy Course</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dv_beauty_wellness">
+            <div class="container">
+                <div class="row rev-row">
+                    <div class="col-md-6">
+                        <ik-image path='assets/Academy/Redesign-Booking-Flow/beauty-wellness.svg'
+                            class="dv_beauty_guide_img d-none d-md-block"></ik-image>
+                        <h5 class="ff-gotham-bold text-capitalize font-24 my-3">
+                            How Is MIA Different?
+                        </h5>
+                        <p class="ff-gotham-book font-18">
+                            The Mirrors Institute of Aesthetics excels with a holistic
+                            approach to beauty and wellness. Personalized treatment plans
+                            ensure each student's unique needs are met. State-of-the-art
+                            technology enhances their innovative curriculum.
+                        </p>
+                        <div class="d-flex align-items-start">
+                            <div class="container-scroll">
+                                <ik-image path='assets/Academy/Redesign-Booking-Flow/circle_rot.svg'
+                                    alt="Rotating Circle" class="circle"></ik-image>
+                                <ik-image path='assets/Academy/Redesign-Booking-Flow/Arrow-rot.svg' alt="Arrow"
+                                    class="arrow"></ik-image>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-bg-2 p-0">
+                            <ik-image path='assets/Academy/Redesign-Booking-Flow/wellness_gif.gif'
+                                class="img-fluid w-100 mx-auto d-block d-md-none"></ik-image>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dv_meet_experts_bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4
+                            class="ff-gotham-bold text-uppercase font-40 text-center dv_our_institute_hd style-experts d-block d-md-none">
+                            <span>meet</span>
+                            <span class="d-block">mirrors institutes </span>
+                            <span>experts</span>
+                        </h4>
+                        <ik-image path='assets/Academy/Redesign-Booking-Flow/meet-experts-resp.png'
+                            class="img-fluid w-100 mx-auto d-block d-md-none position-relative"></ik-image>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <h4
+                            class="ff-gotham-bold text-uppercase font-40 text-center dv_our_institute_hd style-experts d-none d-md-block position-relative">
+                            <span>meet</span>
+                            <span class="d-block">mirrors institutes </span>
+                            <span>experts</span>
+                        </h4>
+                        <p class="ff-gotham-book font-18 my-5">
+                            Meet our team of expert beauticians and stylist, dedicated to
+                            enhancing your natural beauty with precision and care for
+                            courses. Our professionals are experienced and trained in the
+                            latest trends and techniques from hair to luxurious skincare
+                            courses.
+                        </p>
+
+                        <div class="d-flex align-items-center justify-content-center">
+                            <a [routerLink]="['/about-us']" fragment="team" class="dv_discover_btn d-none d-md-block mx-0">View Professionals
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-right">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M5 12l14 0" />
+                                    <path d="M15 16l4 -4" />
+                                    <path d="M15 8l4 4" />
+                                </svg>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dv_education_wrapper">
+            <div class="container">
+                <div class="row rev-row">
+                    <div class="col-md-6">
+                        <h4
+                            class="ff-gotham-bold text-uppercase font-40 text-center dv_our_institute_hd style-education d-none d-md-block position-relative">
+                            <span>EDUCATION</span> <span>EDUCATION</span>
+                            <span>EDUCATION</span>
+                        </h4>
+
+                        <p class="ff-gotham-book font-18">
+                            Our success and philosophy has been rooted firmly in
+                            education. Sharing our unique experience, to create
+                            innovative, globally renowned beauty education. By providing
+                            cutting-edge training and fostering a supportive learning
+                            environment, we have established ourselves as leaders in
+                            producing industry ready beauty professionals.
+                        </p>
+                        <div class="d-flex align-items-center justify-content-start">
+                            <a href="#coursesSection" class="dv_discover_btn d-none d-md-block mx-0">Courses
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-right">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M5 12l14 0"></path>
+                                    <path d="M15 16l4 -4"></path>
+                                    <path d="M15 8l4 4"></path>
+                                </svg>
+                            </a>
+
+                            <a href="/register-new" class="dv_discover_btn mx-2">Enroll Now
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-right">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M5 12l14 0"></path>
+                                    <path d="M15 16l4 -4"></path>
+                                    <path d="M15 8l4 4"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <ik-image path='assets/Academy/Redesign-Booking-Flow/education-bg-respo.png' alt=""
+                            class="img-fluid w-100 mx-auto d-block d-md-none position-relative"></ik-image>
+                        <h4
+                            class="ff-gotham-bold text-uppercase font-40 text-center dv_our_institute_hd d-block d-md-none">
+                            <span>EDUCATION</span> <span>EDUCATION</span>
+                            <span>EDUCATION</span>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <app-footer-new></app-footer-new>
+</div>

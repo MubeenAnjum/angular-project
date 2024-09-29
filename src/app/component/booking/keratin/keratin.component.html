@@ -1,0 +1,382 @@
+<div class="dv_wrapper">
+    <app-header-create></app-header-create>
+    <div class="dv_content_wrapper pt-5">
+        <div class="dv_header_discover mt-md-5 mt-lg-5">
+            <div class="container">
+                <h3  *ngIf="mainList.length>0" class="dv_discover_heading mb-0 mb-md-5 mb-sm-3 mb-xxs-3 pt-4 text-center d-none d-md-block d-lg-block" data-toggle="modal" data-target="#otpaddingnew">
+                    Best Keratin Hair Treatment Dubai 
+                    <p class="font-14 ff-regular mt-2 mb-0 pb-0">Best hair salon near me providing top-notch at-home hairdressers.</p>
+                </h3>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card border-0 pb-0 rounded sticky-top sticky-offset">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4 col-xs-3 col-4 mb-3" *ngFor="let item of mainList; index as i">
+                                    <ng-container *ngIf="item.sub_category_id === 14">
+                                    <a href="javascript:void(0);" (click)="jumpToService(item.sub_category_id)" class="text-dark">
+                                        <div class="card bg-light border-0 text-center font-12">
+                                            <ik-image (error) ="onImgError($event)" path="{{item.sub_category_image}}" class="d-block ml-auto mr-auto w-100 border-radius-5" ></ik-image>
+                                        </div>
+                                        <p class="font-12 d-block text-center mt-2 ff-semibold ff-sm-regular">{{item.sub_category_name}}</p>
+                                    </a>
+                                    </ng-container>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-6" >
+                        <div class="dv_lg_cate_page_container" *ngFor="let item of SubCategoryServicesList; index as i" >
+                            <ng-container *ngIf="item.sub_category_id === 14">
+                            <span *ngIf="item.media_type=='image'  && (item.position==1 || item.service_header_image!=null)">
+                            <ik-image path="{{item.service_header_image==null?item.main_video:item.service_header_image}}" alt="" title="" class="w-100 border-radius-5 mb-4"></ik-image>
+                        </span>
+                        <div  [ngClass]="{'dv_sub_content': classAdd['s-'+item.master_service_id]}" class="dv_subscategory_wrapper" id="s-{{item.master_service_id}}">
+                            <div class="dv_subscategory_per_service_wrapper">
+                                <div class="dv_service_gallery_slider">
+                                    <ik-image   (error) ="onImgError($event)" path="{{item.service_image}}" alt="" title="{{item.name}}"></ik-image>
+                                </div>
+                                <div class="dv_service_tag green">{{item.service_tag}} </div>
+                                <div class="dv_subscategory_per_service_name mt-0" *ngIf="item.is_count>=1">
+                                    {{item.name}} <span data-toggle="modal" data-target="#viewoptionsmodal" (click)="GetOption(item.is_options,item.name,item.is_count,item.option_image)">{{item.is_count}} options </span>
+                                </div>
+                                <div class="dv_subscategory_per_service_rating">
+                                    <div class="dv_star_fixed_for_all">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            class="feather feather-star"
+                                        >
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                        </svg>
+                                    </div>
+                                    <span>4.8 </span> <strong>6K</strong>
+                                </div>
+                                <ul class="dv_sub_service_rate_ul">
+                                    <li>AED {{item.original_price}} <span class="text-danger text-decoration-line-through">AED {{item.original_price + 60}}</span></li>
+                                    <li>{{item.duration}} Min</li>
+                                </ul>
+                                <!--<div class="dv_cashback_amount"> <ik-image path='assets/img/cashback-aed.png"> <span>AED 36</span></div> -->
+                                <ul class="dv_sub_service_descrition_ul" [innerHTML]="item.service_content">
+                                    
+                                </ul>
+                                <button type="button" class="btn btn-default dv_add_package">add</button>
+                                <button type="button" class="btn btn-default dv_edit_package">view detail</button>
+                            </div>
+                        </div>
+                    </ng-container>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="sticky-top sticky-offset">
+
+                            <!-- Salon address start -->
+
+                            <div class="card border p-3 rounded mb-3">
+                                <h4 class="ff-bold font-18">Mirrors Beauty Lounge - Al Rigga </h4>
+                                <div class="dv_star_new mb-3">
+                                  <span>4.8</span>
+                                  <ul>
+                                      <li><svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="#FFA41B"  stroke="#FFA41B"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-star"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" /></svg></li>
+                                      <li><svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="#FFA41B"  stroke="#FFA41B"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-star"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" /></svg></li>
+                                      <li><svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="#FFA41B"  stroke="#FFA41B"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-star"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" /></svg></li>
+                                      <li><svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="#FFA41B"  stroke="#FFA41B"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-star"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" /></svg></li>
+                                      <li><svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="#FFA41B"  stroke="#FFA41B"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-star"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" /></svg></li>
+                                  </ul>
+                                  <a href="javascript:void(0)">(6.1)</a>
+                                </div>
+                                <div class="dv_salontiming_open_new">
+                                    <svg  xmlns="http://www.w3.org/2000/svg"  width="18"  height="18"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-clock"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 7v5l3 3" /></svg> <span>open </span> until 10:00 PM
+                                </div>
+                                <div class="dv_salonaddress_location_new">
+                                    <svg  xmlns="http://www.w3.org/2000/svg"  width="18"  height="18"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-map-pin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" /></svg> Jannah Hotel, Marina - Ground Floor, Shop - 2 Jannah Pl - Dubai Marina - Dubai <a href="#!">Get directions </a>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 pr-0">
+                                        <a href="#!" class="font-12 d-block text-dark" style="color: #6900FF; font-family: 'OpenSauceOneBold';"><svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-phone-call"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" /><path d="M15 7a2 2 0 0 1 2 2" /><path d="M15 3a6 6 0 0 1 6 6" /></svg> 056 300 5629 </a>
+                                    </div>
+                                    <div class="col-md-6 pr-0">
+                                        <a href="#!" class="font-12 d-block text-dark" style="color: #6900FF; font-family: 'OpenSauceOneBold';"><svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="#25D366"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" /><path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" /></svg> 056 300 5629 </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Salon address end -->
+                            <!-- dv_cart_height_if_exceed -->
+                            <!-- <div class="card border p-3 rounded ">
+                                <h4 class="ff-bold font-20">Cart </h4>
+                                <div class="dv_all_services_cart_wrapper">
+                                    <div class="row border-bottom pb-2 pt-2">
+                                        <div class="col-md-6 font-12 text-capitalize">
+                                           Blow dry & Styling
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="dv_plus_minus_wrap top-0">
+                                              <div class="dv_btn_loading_wrap"><div class="dv_btn_loading"></div></div>
+                                              <div class="input-group">
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default btn-number" data-type="minus" data-field="quant[1]">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                                    </button>
+                                                </span>
+                                                <input type="text" name="quant[1]" class="form-control input-number" value="10" min="1" max="10" readonly>
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                                    </button>
+                                                </span>
+                                              </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 p-0">
+                                            <div class="dv_price_new_cut">
+                                                AED 119 <span>AED 159</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row border-bottom pb-2 pt-2">
+                                        <div class="col-md-6 font-12 text-capitalize">
+                                           Blow dry & Styling
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="dv_plus_minus_wrap top-0">
+                                              <div class="dv_btn_loading_wrap"><div class="dv_btn_loading"></div></div>
+                                              <div class="input-group">
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default btn-number" data-type="minus" data-field="quant[1]">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                                    </button>
+                                                </span>
+                                                <input type="text" name="quant[1]" class="form-control input-number" value="10" min="1" max="10" readonly>
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                                    </button>
+                                                </span>
+                                              </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 p-0">
+                                            <div class="dv_price_new_cut">
+                                                AED 119 <span>AED 159</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-3 dv_congratulation_cart border mb-3 border-top-0">
+                                <span><strong>Congratulations!</strong> AED64 saved so far!</span>
+                                <button type="button" class="btn btn-default dv_cart_contnue_btn_new">
+                                    <span><strong>AED 650</strong> <div>AED 250</div></span> Continue
+                                </button>
+                            </div> -->
+
+
+
+
+                            <!-- empty cart start -->
+
+                            <div class="card border p-3 rounded mb-3">
+                                <svg width="100" height="100" viewBox="0 0 128 96" fill="none" xmlns="http://www.w3.org/2000/svg" class="d-block ml-auto mr-auto text-center"><path fill-rule="evenodd" clip-rule="evenodd" d="M77.5 34a.5.5 0 01-.5.5h-2.5V30a.5.5 0 011 0v3.5H77a.5.5 0 01.5.5z" fill="#FFD47F"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M79.5 34a.5.5 0 01-.5.5h-2.5V30a.5.5 0 011 0v3.5H79a.5.5 0 01.5.5z" fill="#FFD47F"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M73 69a1 1 0 011 1v1H61a1 1 0 00-1 1v7h-2v-7a3 3 0 013-3h12zm3 2h9a1 1 0 011 1v7h2v-7a3 3 0 00-3-3h-9.17c.11.313.17.65.17 1v1z" fill="#E2E2E2"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M60 60v10h-2V60h2z" fill="#E2E2E2"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M72 72a1 1 0 00-1-1H47a1 1 0 00-1 1v7h-2v-7a3 3 0 013-3h24a3 3 0 013 3v7h-2v-7z" fill="#E2E2E2"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M74 70v9h-2v-9h2z" fill="#E2E2E2"></path><path d="M50 79a5 5 0 11-10 0 5 5 0 0110 0zM64 79a5 5 0 11-10 0 5 5 0 0110 0zM78 79a5 5 0 11-10 0 5 5 0 0110 0zM92 79a5 5 0 11-10 0 5 5 0 0110 0z" fill="#757575"></path><path d="M48 79a3 3 0 11-6 0 3 3 0 016 0zM62 79a3 3 0 11-6 0 3 3 0 016 0zM76 79a3 3 0 11-6 0 3 3 0 016 0zM90 79a3 3 0 11-6 0 3 3 0 016 0z" fill="#EEE"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M74 60v10h-2V60h2z" fill="#E2E2E2"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M30.832 25.445l8 12-1.664 1.11-8-12 1.664-1.11zm16 0l8 12-1.664 1.11-8-12 1.664-1.11z" fill="#CBCBCB"></path><path d="M44 34h52l-5.694 30.369A2 2 0 0188.34 66H53.32a4 4 0 01-3.932-3.263L44 34z" fill="#CBCBCB"></path><path d="M34 34h48l-6 32H41.66a2 2 0 01-1.966-1.631L34 34z" fill="#E2E2E2"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M46 40h-2v7.059h2V40zm0 12.941h-2V60h2v-7.059zM50 40h2v7.059h-2V40zm2 12.941h-2V60h2v-7.059zM56 40h2v7.059h-2V40zm2 12.941h-2V60h2v-7.059zM62 40h2v7.059h-2V40zm2 12.941h-2V60h2v-7.059zM68 40h2v7.059h-2V40zm2 12.941h-2V60h2v-7.059z" fill="#fff"></path><path d="M24 24h28v4H24v-4z" fill="#97674E"></path><path d="M78 20h6v4a6 6 0 01-6 6V20zM78 15a3 3 0 116 0v5h-6v-5zM78 30V18L66 30h12z" fill="#997BED"></path><path d="M88 16l-4-1v2l4-1z" fill="#FFD47F"></path><path d="M81 15a1 1 0 112 0 1 1 0 01-2 0z" fill="#0F0F0F"></path><path d="M72 30h-6l12-12v6a6 6 0 01-6 6z" fill="#6E42E5"></path></svg>
+                                <span class="text-muted font-12 d-block text-center">No items in your cart </span>
+                            </div>
+
+                            <!-- empty cart end -->
+
+                            <!-- cart added start -->
+
+                            <div class="card border-0 rounded mb-3">
+                                <ik-image path='assets/img/category-analytics.svg' class="w-100"></ik-image>
+                            </div>
+
+                            <!-- empty added end -->
+
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="mt-5 mb-5 w-100">
+                <div class="row">
+                    <div class="col-md-12 mb-4">
+                        <h2 class="font-24 ff-bold mb-3 text-capitalize">Frequently asked questions </h2>
+                        <div class="accordion" id="accordionExample">
+                            <div class="card">
+                                <div class="card-head" id="headingTwo">
+                                    <h2 class="mb-0 collapsed font-14 ff-bold p-4 dv_accodion_h2" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        What is a keratin hair treatment?
+                                    </h2>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                    <div class="card-body font-13 ff-bold text-muted border-top">
+                                        Keratin is a protein in our body that naturally occurs that makes up a large amount of skin, hair, & nails. In spite of the fact that the keratin cells die with the time, it’s essential that they are cared for. The keratin protein makes up about 95% of our hair, so taking care of keratin extremely important. For hair, healthy keratin healthy keratin production is essential for beautiful, shiny hair.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-head" id="headingThree">
+                                    <h2 class="mb-0 collapsed font-14 ff-bold p-4 dv_accodion_h2" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Does Brazilian keratin treatment reduce the natural volume of the hair?
+                                    </h2>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div class="card-body font-13 ff-bold text-muted border-top">
+                                        No, your hair will retain most of its natural volume after the Brazilian Keratin Treatment. Using a Curling iron and round brush will always be the best option to create more volume and body.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-head" id="headingFour">
+                                    <h2 class="mb-0 collapsed font-14 ff-bold p-4 dv_accodion_h2" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Will my hair be straight after the keratin treatment done?
+                                    </h2>
+                                </div>
+                                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                                    <div class="card-body font-13 ff-bold text-muted border-top">
+                                        If your hair is straight, it will eliminate the frizzy hair and give you a healthier and shiny look. If the hair is curly, it will eliminate the frizzy hair and define the natural curl. It always depends on the texture of your hair. 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-head" id="headingFour1">
+                                    <h2 class="mb-0 collapsed font-14 ff-bold p-4 dv_accodion_h2" data-toggle="collapse" data-target="#collapseFour1" aria-expanded="false" aria-controls="collapseFour1">
+                                        How do I know if I can undergo keratin hair treatment?
+                                    </h2>
+                                </div>
+                                <div id="collapseFour1" class="collapse" aria-labelledby="headingFour1" data-parent="#accordionExample">
+                                    <div class="card-body font-13 ff-bold text-muted border-top">
+                                        Keratin treatment is an option for everyone and it suits every hair type. It will be equally effective on all hair types including thick, thin, dry, chemically damaged, straight, wavy and curly. For pregnant customers we advise that they should get doctor’s approval since prevention is always better.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-head" id="headingFour2">
+                                    <h2 class="mb-0 collapsed font-14 ff-bold p-4 dv_accodion_h2" data-toggle="collapse" data-target="#collapseFour2" aria-expanded="false" aria-controls="collapseFour2">
+                                        How long does the keratin treatment last?
+                                    </h2>
+                                </div>
+                                <div id="collapseFour2" class="collapse" aria-labelledby="headingFour2" data-parent="#accordionExample">
+                                    <div class="card-body font-13 ff-bold text-muted border-top">
+                                        The results will depend on the types of hair and how often they are washed. It normally lasts up to 12 weeks however the wave can return sooner
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-head" id="headingFour4">
+                                    <h2 class="mb-0 collapsed font-14 ff-bold p-4 dv_accodion_h2" data-toggle="collapse" data-target="#collapseFour4" aria-expanded="false" aria-controls="collapseFour4">
+                                        How do I maintain my hair after a keratin treatment?
+                                    </h2>
+                                </div>
+                                <div id="collapseFour4" class="collapse" aria-labelledby="headingFour4" data-parent="#accordionExample">
+                                    <div class="card-body font-13 ff-bold text-muted border-top">
+                                        The main important thing that can be used to appropriate aftercare product line that your salon or stylist suggests is that you need to wash your hair around 3 times per week if possible and follow the advice of your beautician for other hair treatments that you can do or not or how long will the waiting period is.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-head" id="headingFour5">
+                                    <h2 class="mb-0 collapsed font-14 ff-bold p-4 dv_accodion_h2" data-toggle="collapse" data-target="#collapseFour5" aria-expanded="false" aria-controls="collapseFour5">
+                                        Will swimming be compromise my keratin hair treatment?
+                                    </h2>
+                                </div>
+                                <div id="collapseFour5" class="collapse" aria-labelledby="headingFour5" data-parent="#accordionExample">
+                                    <div class="card-body font-13 ff-bold text-muted border-top">
+                                        Swimming is fine but to protect the hair from chlorine and salt in the water, you should discuss with your stylist & use some product to apply before swimming to protect the hair. Otherwise, the life of your treatment may be compromised if you swim regularly without any hair protection.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-head" id="headingFour7">
+                                    <h2 class="mb-0 collapsed font-14 ff-bold p-4 dv_accodion_h2" data-toggle="collapse" data-target="#collapseFour7" aria-expanded="false" aria-controls="collapseFour7">
+                                        . Is the keratin hair treatment permanent?
+                                    </h2>
+                                </div>
+                                <div id="collapseFour7" class="collapse" aria-labelledby="headingFour7" data-parent="#accordionExample">
+                                    <div class="card-body font-13 ff-bold text-muted border-top">
+                                        No, it is not permanent. But creates a protein layer overlay on the cuticle which protects the hair for an extended time, so the condition is improved.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+                <div class="row mt-5 mb-5">
+                    <div class="col-md-12 mb-4">
+                                                <a href="https://www.google.com/search?q=mirrors+beauty+lounge+al+rigga&oq=mirrors+beauty+lounge+al+rigga&gs_lcrp=EgZjaHJvbWUqCggAEAAY4wIYgAQyCggAEAAY4wIYgAQyDQgBEC4YrwEYxwEYgAQyCAgCEAAYFhgeMggIAxAAGBYYHjIICAQQABgWGB4yCAgFEAAYFhgeMg0IBhAAGIYDGIAEGIoFMg0IBxAAGIYDGIAEGIoFMgoICBAAGIAEGKIEMgoICRAAGIAEGKIE0gEINzU1OGowajeoAgCwAgA&sourceid=chrome&ie=UTF-8#lrd=0x3e5f5ccee30c20f9:0x4b12e6880a35437c,1,,,,">
+                        </a>
+                         <ik-image path="assets/img/g-reviews.jpg" class="w-100"></ik-image>
+                    </div>
+                     
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mb-4">
+                      <h1 class="ff-bold font-24">Best Keratin Hair Treatment Dubai </h1>
+                        <p class="d-block text-muted font-12 mb-5">
+                            Our experienced beauticians offer different hair care treatments for our clients in Dubai. We are focused on giving our clients simply the best outcomes.
+                        </p>
+                        <p class="d-block text-muted font-12 mb-5">
+                            For individuals with unmanageable or damaged hair, a keratin treatment could be their addressed supplication. Our treatment is free from formaldehyde and contains all organic & natural ingredients. A beautician at our salon will apply the keratin onto your hair strands and afterward seal in the item by applying heat from a level iron. This is a procedure that takes quite a while. Depending on the length of your hair, it can take somewhere in the range of an hour to three hours. The keratin hair treatment is also called a Brazilian blowout, Brazilian keratin treatment or anti-frizz hair treatment that reduces up to ninety-five percent of frizz, leaving your hair smooth and shiny. Since it requires some time to do, you will be happy to realize that it should last up to more than two months. To ensure the treatment truly sticks, you should not wash your hair for three to four days. One advantage you will see is that for the following couple of months, fuzzy hair will be far out...
+                        </p>
+                        <p class="d-block text-muted font-12 mb-5">
+                            There are various types of keratin treatments for hair available today, but not all are created equal. A few elements must be viewed while picking a keratin for hair, so it is essential that you seek advice from a stylist that specializes in such hair treatments.
+                        </p>
+                        <p class="d-block text-muted font-12 mb-5">
+                            The main factor for a beautician to consider when helping you pick a smoothing treatment is your hair type. Each keratin treatment equation will respond contrastingly based on your hair type. So understanding your hair type, tuning in to your hair objectives and having extensive experience with a wide range of treatments is needed. On the off chance that you have a tight twist and you are hoping to accomplish straighter hair with less styling time, your beautician needs to understand what sort of treatment can arrive at that level of smoothing.
+                        </p>
+                        <p class="d-block text-muted font-12 mb-5">
+                            Through extensive research and after testing a majority of the products available on the market, we have found the best keratin hair treatment in Dubai-QOD keratin treatment and global keratin hair treatment (also called as GK hair treatment) to be the highest quality. Now reduce frizzy hair with– gk keratin hair treatment 
+                        </p>
+                        <p class="d-block text-muted font-12 mb-5">
+                            During the process, a stylist applies a product gk keratin or qod keratin to your hair from the ends to the roots. Then, a flat iron is used to seal the keratin into the shaft of the hair, resulting in silkier & more manageable hair with results lasting up to several months!
+                        </p>
+                        <p class="d-block text-muted font-12 mb-5">
+                            After you have keratin, you also no longer have to worry about humidity or even rain affecting your hairstyle. The keratin proteins sealed into your hair will keep each strand smooth and anti-frizz hair regardless of humidity levels so you could save money on frizz control serums and similar products.
+                        </p>
+                        <p class="d-block text-muted font-12 mb-5">
+                            When you are in Dubai or UAE, searching for a salon that can give you a great makeover, come to Mirrors beauty lounge which is the best place for keratin treatment. We guarantee you will walk out off the door happy with the look we give you.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-12 mb-4">
+                        <h2 class="font-18 ff-bold mb-3">GK KERATIN HAIR TREATMENT/GLOBAL KERATIN HAIR TREATMENT/Anti Frizzy hair treatment</h2>
+                        <p class="d-block text-muted font-12 mb-3">
+                            The gk hair keratin treatment with juvexin incorporates a unique and patented formulation of proteins and is found exclusively in gk hair products. In contrast to different keratins, juvexin is non-hydrolyzed; maintains all of nature’s healing powers.
+                        </p>
+                        <p class="d-block text-muted font-12 mb-3">You should wait for 42 hours before washing hair or verifying the hair in groups or clasps. Gk keratin hair treatment is the best juvexin treatment which helps to strengthen the hair for as long as 5 months. Sodium chloride and sulfate-free shampoos and conditioners are recommended post treatment.</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 mb-4">
+                        <h2 class="font-18 ff-bold mb-3">QOD keratin hair treatment </h2>
+                        <p class="d-block text-muted font-12 mb-3">
+                            QOD Keratin Hair treatment is a new way of treatment which is basically a keratin based hair treatment, originating in Brazil that truly transforms the hair, by replenishing the condition of the hair. It does not change the hair molecular structure and it can be used for all kinds of hair.
+                        </p>
+                        <p class="d-block text-muted font-12 mb-3">QOD Keratin hair treatment results in silky and smooth hair. Check with your hairdresser about the aftercare procedure to maintain the smooth silky hair for a longer period of time. </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mb-4">
+                        <h2 class="font-18 ff-bold mb-3">BRAZILIAN Blowout KERATIN TREATMENT </h2>
+                        <p class="d-block text-muted font-12 mb-3">
+                            Keratin Hair Treatment also known as Brazilian blowout hair treatment, Brazilian keratin treatments is  semi-permanent, smoothing treatment. They make hair straighter, shinier and more beneficial as observed with numerous Hollywood famous people.
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <app-footer-new></app-footer-new>
+</div>

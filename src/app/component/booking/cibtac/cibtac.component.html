@@ -1,0 +1,796 @@
+
+<input type="button" hidden #btntermsncondition  data-toggle="modal" data-target="#termsncondition" />
+<input type="button" hidden #btnprivacypolicy  data-toggle="modal" data-target="#privacy-policy" />
+<input type="button" hidden #btncancellationpolicy  data-toggle="modal" data-target="#cancellation-policy" />
+<input type="button" hidden #btnsafety  data-toggle="modal" data-target="#safety" />
+<div class="dv_skelton_load_branches overflow-hidden " *ngIf="IsLoading" style=" padding: initial; position: fixed; top: 0; z-index: 4; width: 100%; background: #ffffff; ">
+  <ngx-skeleton-loader [theme]="{ height: '300px', margin: '0 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '15px', width : '50%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '15px', width : '60%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '15px', width : '55%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '30px', width : '18%', position:'absolute', margin: '-15px 0px 10px 61px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '6px', width : '80%', margin: '0px 0 0 15px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '6px', width : '80%', margin: '0px 0 0 15px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '6px', width : '70%', margin: '0px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '15px', width : '40%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '6px', width : '70%', margin: '0px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '6px', width : '70%', margin: '0px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '200px', margin: '0 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '6px', width : '80%', margin: '0px 0 0 15px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '6px', width : '80%', margin: '0px 0 0 15px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '6px', width : '70%', margin: '0px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '15px', width : '40%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '6px', width : '70%', margin: '0px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '6px', width : '70%', margin: '0px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+</div>
+<div class="dv_wrapper">
+  <app-header-create></app-header-create>
+  
+      <div class="dv_content_wrapper pt-5 dv_pt_sub_pg">
+      <div class="dv_header_discover mt-md-5 mt-lg-5">
+          
+          <video style="width: 100%; height: auto; border-radius: 10px; margin: 0 0 20px 0;" class="video" preload autoplay muted loop playsinline poster="" controlsList="nofullscreen" class="d-block d-md-none d-lg-none">
+            <source src="https://ik.imagekit.io/mirrorskit/assets/Academy/mia-mobile.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="container display-mobile">
+              
+          </div>
+      </div>
+          <div class="container">
+             
+              <div class="height-30"></div>
+              <div class="row">
+                  <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-12">
+                      <div class="card border-0 pb-0 rounded sticky-top sticky-offset z-index-0 mb-4">
+                          <h4 *ngIf="mainList.length>0" class="dv_subscategory_heading font-30 mt-0 mb-5 text-capitalize">{{h1_tag}} </h4>
+                          <div class="border-1 p-3 border-radius-10">
+                              <h4 class="ff-bold font-16 mt-0 mb-3 text-center text-capitalize">select your course </h4>
+                              <div class="row" [ngClass]="{'fixed_top':fixed_top}">
+                                  <div class="col-md-4 col-sm-4 col-xs-3 col-4 mb-3" *ngFor="let item of mainList; index as i">
+                                      <a href="javascript:void(0);" (click)="jumpToService(item.sub_category_id)" class="text-dark">
+                                          <div class="card bg-light border-0 text-center font-12">
+                                              <!-- <img src="img/sub-cat-new/1.jpg" class="d-block ml-auto mr-auto w-100 border-radius-5 dv_sub_categori_icon"  /> -->
+                                              <ik-image (error) ="onImgError($event)" path="{{item.sub_category_image}}" class="d-block ml-auto mr-auto w-100 border-radius-5 dv_sub_categori_icon" ></ik-image>
+                                          </div>
+                                          <p class="font-12 d-block text-center mt-2 ff-semibold ff-sm-regular">{{item.sub_category_name}}</p>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-7 col-sm-12">
+                      <video style="width: 100%; height: auto; border-radius: 10px;" class="video" preload autoplay muted loop playsinline poster="" controlsList="nofullscreen" class="d-none d-md-block d-lg-block">
+                        <source src="https://ik.imagekit.io/mirrorskit/assets/Academy/mia-desktop.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+                      </video>
+                      <!-- <video style="width: 100%; height: auto; border-radius: 10px;" loop autoplay muted class="d-block d-md-none d-lg-none">
+                        <source src="img/mia.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video> -->
+                      
+                      <div class="row mt-4">
+                          <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-sm-12">
+                              <div class="dv_lg_cate_page_container" *ngFor="let item of SubCategoryServicesList; index as i">
+                                  <!-- <img src="img/sub-cat-new/service-header.jpg" alt="" title="" class="w-100 border-radius-5 mb-4" /> -->
+                                  <h4 class="dv_subscategory_heading font-26 mt-0 mb-3 text-capitalize">{{item.position==1 ?item.sub_category_name:''}} </h4>
+                                  <a href="javascript:void(0);" *ngIf="item.position == 1 && item.sub_category_name" class="font-12 ff-semibold mb-4 d-block" style="color: #6900FF !important;" data-toggle="modal" data-target="#meetexprts">Meet our educators </a><!--<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg> -->
+                                  <!-- <img src="img/beauty-theraphy-img.jpg" alt="" title="" class="w-100 border-radius-5 mb-4 " /> -->
+                                  <div  [ngClass]="{'dv_sub_content': classAdd[item.sub_category_id]}" class="dv_sub_cat_banners  left_sm_container" id="{{item.position==1?item.sub_category_id:''}}">
+                                  <span *ngIf="item.media_type=='image'  && (item.position==1 || item.service_header_image!=null)">
+                                    <ik-image path="{{item.service_header_image==null?item.main_video:item.service_header_image}}" alt="" title="" class="w-100 border-radius-5 mb-4"></ik-image>
+                                </span>
+                                <div  [ngClass]="{'dv_sub_content': classAdd['s-'+item.master_service_id]}" class="dv_subscategory_wrapper" id="s-{{item.master_service_id}}">
+                                  <div class="dv_subscategory_per_service_wrapper border-left border-top pl-3 pt-3">
+                                      <div class="dv_service_gallery_slider">
+                                          <!-- <img src="img/service-gallery/4.jpg" alt="" title="" /> -->
+                                          <ik-image   (error) ="onImgError($event)" path="{{item.service_image}}" alt="" title="{{item.name}}"></ik-image>
+                                      </div>
+                                      <!-- <div class="dv_service_tag green">Regular Polish </div> -->
+                                      <div class="dv_subscategory_per_service_name mt-0" *ngIf="item.is_count>1">
+                                        {{item.name}} <span data-toggle="modal" data-target="#viewoptionsmodal" (click)="GetOption(item.is_options,item.name,item.is_count,item.option_image)">{{item.is_count}} options </span>
+                                      </div>
+                                      <div class="dv_subscategory_per_service_name mt-0"  *ngIf="item.is_count<=1">
+                                        {{item.name}} 
+                                        </div>
+                                      <!--<div class="dv_subscategory_per_service_rating">
+                                          <div class="dv_star_fixed_for_all">
+                                              <svg
+                                                  xmlns="http://www.w3.org/2000/svg"
+                                                  width="24"
+                                                  height="24"
+                                                  viewBox="0 0 24 24"
+                                                  fill="none"
+                                                  stroke="currentColor"
+                                                  stroke-width="2"
+                                                  stroke-linecap="round"
+                                                  stroke-linejoin="round"
+                                                  class="feather feather-star"
+                                              >
+                                                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                              </svg>
+                                          </div>
+                                          <span>4.7 </span> <strong>145</strong>
+                                      </div>-->
+                                      <ul class="dv_sub_service_rate_ul">
+                                          <li>AED {{item.original_price}} <span class="text-decoration-line-through "> {{item.original_price + 1000}}</span></li>
+                                          <li class="fw-bold">-</li>
+                                          <li>{{item.days}}</li>
+                                      </ul>
+                                      <!--<div class="dv_cashback_amount"> <img src="img/cashback-aed.png"> <span>AED 36</span></div> -->
+                                      <ul class="dv_sub_service_descrition_ul" [innerHTML]="item.service_content">
+                                          
+                                      </ul>
+                                      <!-- <div class="dv_plus_minus_wrap " [ngClass]="{'top-0':item.service_header_image}"   *ngIf="item.is_count<=1">
+               
+                                        <div class="dv_btn_loading_wrap" [ngClass]="{'d-block': isDisable[item.master_service_id]==true}"><div class="dv_btn_loading"></div></div>
+                                        <div class="input-group" *ngIf="IsAdded[item.master_service_id]">
+                                          <span class="input-group-btn">
+                                              <button type="button" class="btn btn-default btn-number" data-type="minus" (click)="minus(item.master_service_id,item.discount_price+item.original_price+60)" data-field="quant[1]" >
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                              </button>
+                                          </span>
+                                          <input readonly type="text" [(ngModel)]="count[item.master_service_id]" readonly name="quant[1]"  class="form-control input-number" value="{{item.quantity}}" min="1" max="10">
+                                          <span class="input-group-btn">
+                                              <button type="button" class="btn btn-default btn-number" (click)="plus(item.master_service_id,item.discount_price+item.original_price+60)" data-type="plus" data-field="quant[1]" >
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                              </button>
+                                          </span>
+                                        </div>
+                                      </div> 
+                                      <div class="dv_plus_minus_wrap" *ngIf="item.is_count>1">
+                                        <div class="dv_btn_loading_wrap" [ngClass]="{'d-block': isDisable[item.master_service_id]==true}"><div class="dv_btn_loading"></div></div>
+                                        <div class="input-group" *ngIf="IsAdded[item.master_service_id]">
+                                          <span class="input-group-btn">
+                                              <button type="button" class="btn btn-default btn-number" data-type="minus" data-toggle="modal" data-target="#viewoptionsmodal" (click)="GetOption(item.is_options,item.name,item.is_count,item.option_image)" data-field="quant[1]" >
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                              </button>
+                                          </span>
+                                          <input readonly type="text" [(ngModel)]="parentCount[item.master_service_id]" readonly name="quant[1]"  class="form-control input-number" value="{{item.quantity}}" min="1" max="10">
+                                          <span class="input-group-btn">
+                                              <button type="button" class="btn btn-default btn-number" data-toggle="modal" data-target="#viewoptionsmodal"  (click)="GetOption(item.is_options,item.name,item.is_count,item.option_image)" data-type="plus" data-field="quant[1]" >
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                              </button>
+                                          </span>
+                                        </div>
+                                      </div> 
+                                      <span  *ngIf="(!IsAdded[item.master_service_id] || IsAdded[item.master_service_id]=='') && item.is_count<=1">  <button type="button" [ngClass]="{'top--15':item.service_header_image}" class="btn btn-default dv_add_package" (click)="AddToCart(item.master_service_id,1,item.original_price,item.discount_price+item.original_price+60,item.name)"> <div class="dv_btn_loading_wrap" [ngClass]="{'d-block': isDisable[item.master_service_id]==true}"><div class="dv_btn_loading"></div></div>add </button></span>
+                                <span  *ngIf="(!IsAdded[item.master_service_id] || IsAdded[item.master_service_id]=='') && item.is_count>1">  <button type="button" [ngClass]="{'top--15':item.service_header_image}" class="btn btn-default dv_add_package" data-toggle="modal" data-target="#viewoptionsmodal" (click)="GetOption(item.is_options,item.name,item.is_count,item.option_image)"> <div class="dv_btn_loading_wrap" [ngClass]="{'d-block': isDisable[item.master_service_id]==true}"><div class="dv_btn_loading"></div></div>add </button></span>
+                                <span  *ngIf="(!IsAdded[item.master_service_id] || IsAdded[item.master_service_id]=='') && item.is_edit==1">  <button type="button" [ngClass]="{'top--15':item.service_header_image}" class="btn btn-default dv_add_package"  data-toggle="modal" data-target="#edit_package" (click)="GetEdit(item.is_options,item.name,item.is_count,item.option_image,item.package_count)"> <div class="dv_btn_loading_wrap" [ngClass]="{'d-block': isDisable[item.master_service_id]==true}"><div class="dv_btn_loading"></div></div>add </button></span> -->
+                                <span *ngIf="item.service_benefits && item.is_edit==0">  <button type="button" class="btn btn-default dv_edit_package" data-toggle="modal" data-target="#view_page" (click)="ServiceDetail(item,item.master_service_id)">view detail  </button></span>
+                                <span *ngIf="item.is_edit==1">  <button type="button" class="btn btn-default dv_edit_package" data-toggle="modal" data-target="#edit_package" (click)="GetEdit(item.is_options,item.name,item.is_count,item.option_image,item.package_count)">Edit Package  </button></span>
+                                  </div>
+                                      </div>
+                              </div>
+                              </div>
+                          </div>
+                          <!-- <div class="card border p-3 rounded mb-3"  *ngIf="!IsCartExist">
+                            <svg width="100" height="100" viewBox="0 0 128 96" fill="none" xmlns="http://www.w3.org/2000/svg" class="d-block ml-auto mr-auto text-center"><path fill-rule="evenodd" clip-rule="evenodd" d="M77.5 34a.5.5 0 01-.5.5h-2.5V30a.5.5 0 011 0v3.5H77a.5.5 0 01.5.5z" fill="#FFD47F"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M79.5 34a.5.5 0 01-.5.5h-2.5V30a.5.5 0 011 0v3.5H79a.5.5 0 01.5.5z" fill="#FFD47F"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M73 69a1 1 0 011 1v1H61a1 1 0 00-1 1v7h-2v-7a3 3 0 013-3h12zm3 2h9a1 1 0 011 1v7h2v-7a3 3 0 00-3-3h-9.17c.11.313.17.65.17 1v1z" fill="#E2E2E2"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M60 60v10h-2V60h2z" fill="#E2E2E2"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M72 72a1 1 0 00-1-1H47a1 1 0 00-1 1v7h-2v-7a3 3 0 013-3h24a3 3 0 013 3v7h-2v-7z" fill="#E2E2E2"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M74 70v9h-2v-9h2z" fill="#E2E2E2"></path><path d="M50 79a5 5 0 11-10 0 5 5 0 0110 0zM64 79a5 5 0 11-10 0 5 5 0 0110 0zM78 79a5 5 0 11-10 0 5 5 0 0110 0zM92 79a5 5 0 11-10 0 5 5 0 0110 0z" fill="#757575"></path><path d="M48 79a3 3 0 11-6 0 3 3 0 016 0zM62 79a3 3 0 11-6 0 3 3 0 016 0zM76 79a3 3 0 11-6 0 3 3 0 016 0zM90 79a3 3 0 11-6 0 3 3 0 016 0z" fill="#EEE"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M74 60v10h-2V60h2z" fill="#E2E2E2"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M30.832 25.445l8 12-1.664 1.11-8-12 1.664-1.11zm16 0l8 12-1.664 1.11-8-12 1.664-1.11z" fill="#CBCBCB"></path><path d="M44 34h52l-5.694 30.369A2 2 0 0188.34 66H53.32a4 4 0 01-3.932-3.263L44 34z" fill="#CBCBCB"></path><path d="M34 34h48l-6 32H41.66a2 2 0 01-1.966-1.631L34 34z" fill="#E2E2E2"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M46 40h-2v7.059h2V40zm0 12.941h-2V60h2v-7.059zM50 40h2v7.059h-2V40zm2 12.941h-2V60h2v-7.059zM56 40h2v7.059h-2V40zm2 12.941h-2V60h2v-7.059zM62 40h2v7.059h-2V40zm2 12.941h-2V60h2v-7.059zM68 40h2v7.059h-2V40zm2 12.941h-2V60h2v-7.059z" fill="#fff"></path><path d="M24 24h28v4H24v-4z" fill="#97674E"></path><path d="M78 20h6v4a6 6 0 01-6 6V20zM78 15a3 3 0 116 0v5h-6v-5zM78 30V18L66 30h12z" fill="#997BED"></path><path d="M88 16l-4-1v2l4-1z" fill="#FFD47F"></path><path d="M81 15a1 1 0 112 0 1 1 0 01-2 0z" fill="#0F0F0F"></path><path d="M72 30h-6l12-12v6a6 6 0 01-6 6z" fill="#6E42E5"></path></svg>
+                            <span class="text-muted font-12 d-block text-center">No items in your cart </span>
+                        </div> -->
+                          <div class="col-xxl-5 col-xl-5 col-lg-5 hide-mobile">
+                              <div class="sticky-top sticky-offset">
+
+                                <!-- <div class="card border p-3 rounded mb-3" *ngIf="!IsCartExist">
+                                  <svg width="100" height="100" viewBox="0 0 128 96" fill="none" xmlns="http://www.w3.org/2000/svg" class="d-block ml-auto mr-auto text-center"><path fill-rule="evenodd" clip-rule="evenodd" d="M77.5 34a.5.5 0 01-.5.5h-2.5V30a.5.5 0 011 0v3.5H77a.5.5 0 01.5.5z" fill="#FFD47F"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M79.5 34a.5.5 0 01-.5.5h-2.5V30a.5.5 0 011 0v3.5H79a.5.5 0 01.5.5z" fill="#FFD47F"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M73 69a1 1 0 011 1v1H61a1 1 0 00-1 1v7h-2v-7a3 3 0 013-3h12zm3 2h9a1 1 0 011 1v7h2v-7a3 3 0 00-3-3h-9.17c.11.313.17.65.17 1v1z" fill="#E2E2E2"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M60 60v10h-2V60h2z" fill="#E2E2E2"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M72 72a1 1 0 00-1-1H47a1 1 0 00-1 1v7h-2v-7a3 3 0 013-3h24a3 3 0 013 3v7h-2v-7z" fill="#E2E2E2"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M74 70v9h-2v-9h2z" fill="#E2E2E2"></path><path d="M50 79a5 5 0 11-10 0 5 5 0 0110 0zM64 79a5 5 0 11-10 0 5 5 0 0110 0zM78 79a5 5 0 11-10 0 5 5 0 0110 0zM92 79a5 5 0 11-10 0 5 5 0 0110 0z" fill="#757575"></path><path d="M48 79a3 3 0 11-6 0 3 3 0 016 0zM62 79a3 3 0 11-6 0 3 3 0 016 0zM76 79a3 3 0 11-6 0 3 3 0 016 0zM90 79a3 3 0 11-6 0 3 3 0 016 0z" fill="#EEE"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M74 60v10h-2V60h2z" fill="#E2E2E2"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M30.832 25.445l8 12-1.664 1.11-8-12 1.664-1.11zm16 0l8 12-1.664 1.11-8-12 1.664-1.11z" fill="#CBCBCB"></path><path d="M44 34h52l-5.694 30.369A2 2 0 0188.34 66H53.32a4 4 0 01-3.932-3.263L44 34z" fill="#CBCBCB"></path><path d="M34 34h48l-6 32H41.66a2 2 0 01-1.966-1.631L34 34z" fill="#E2E2E2"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M46 40h-2v7.059h2V40zm0 12.941h-2V60h2v-7.059zM50 40h2v7.059h-2V40zm2 12.941h-2V60h2v-7.059zM56 40h2v7.059h-2V40zm2 12.941h-2V60h2v-7.059zM62 40h2v7.059h-2V40zm2 12.941h-2V60h2v-7.059zM68 40h2v7.059h-2V40zm2 12.941h-2V60h2v-7.059z" fill="#fff"></path><path d="M24 24h28v4H24v-4z" fill="#97674E"></path><path d="M78 20h6v4a6 6 0 01-6 6V20zM78 15a3 3 0 116 0v5h-6v-5zM78 30V18L66 30h12z" fill="#997BED"></path><path d="M88 16l-4-1v2l4-1z" fill="#FFD47F"></path><path d="M81 15a1 1 0 112 0 1 1 0 01-2 0z" fill="#0F0F0F"></path><path d="M72 30h-6l12-12v6a6 6 0 01-6 6z" fill="#6E42E5"></path></svg>
+                                  <span class="text-muted font-12 d-block text-center">No items in your cart </span>
+                              </div> -->
+
+                                  <!-- Salon address start -->
+
+                                  <div class="card border p-3 mt-0 rounded">
+                                      <h4 class="ff-bold font-18">{{ instituteData.name }} </h4>
+                                      <div class="dv_star_new mb-3">
+                                        <span>{{ instituteData.rating }}</span>
+                                        <ul>
+                                            <li><svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="#FFA41B"  stroke="#FFA41B"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-star"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" /></svg></li>
+                                            <li><svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="#FFA41B"  stroke="#FFA41B"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-star"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" /></svg></li>
+                                            <li><svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="#FFA41B"  stroke="#FFA41B"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-star"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" /></svg></li>
+                                            <li><svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="#FFA41B"  stroke="#FFA41B"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-star"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" /></svg></li>
+                                            <li>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FFA41B" class="bi bi-star-half" viewBox="0 0 16 16"> <path d="M5.354 5.119 7.538.792A.52.52 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.54.54 0 0 1 16 6.32a.55.55 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.5.5 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.6.6 0 0 1 .085-.302.51.51 0 0 1 .37-.245zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.56.56 0 0 1 .162-.505l2.907-2.77-4.052-.576a.53.53 0 0 1-.393-.288L8.001 2.223 8 2.226z"/> </svg>
+                                            </li>
+                                            <!-- <li><svg  xmlns="http://www.w3.org/2000/svg" width="16"  height="16"  viewBox="0 0 24 24"  fill="#FFA41B"  stroke="#FFA41B"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-star"><path style="fill: linear-gradient(to left, #ff0000 50%, #0000ff 50%) !important;" stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" /></svg></li> -->
+                                        </ul>
+                                        <a href="#!">{{ instituteData.reviews }}</a>
+                                      </div>
+                                      <div class="dv_salontiming_open_new">
+                                          <svg  xmlns="http://www.w3.org/2000/svg"  width="18"  height="18"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-clock"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 7v5l3 3" /></svg> <span style="margin-left: 8px;">open </span> until {{ instituteData.closingTime }}
+                                      </div>
+                                      <div class="dv_salonaddress_location_new">
+                                          <svg  xmlns="http://www.w3.org/2000/svg"  width="18"  height="18"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-map-pin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" /></svg> {{ instituteData.address }} <a href="https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUqDggAEEUYJxg7GIAEGIoFMg4IABBFGCcYOxiABBiKBTIGCAEQRRg8MgYIAhBFGDwyBggDEEUYPDIGCAQQRRg8MgYIBRBFGEEyBggGEEUYQTIGCAcQRRhBqAIAsAIA&um=1&ie=UTF-8&fb=1&gl=ae&sa=X&geocode=KZ9AKfeCXV8-MaDzACpzjQZH&daddr=Buhaleeba+plaza,+Dominos+Pizza+Building+-+3rd+Floor+-+Al+Muraqqabat+-+Dubai" target="_blank">Get directions </a>
+                                      </div>
+                                      <div class="row">
+                                          <div class="col-md-6 pr-0">
+                                              <a href="tel:{{instituteData.phone}}" target="_blank" class="font-12 d-block text-dark" style="color: #6900FF; font-family: 'OpenSauceOneBold';"><svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-phone-call"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" /><path d="M15 7a2 2 0 0 1 2 2" /><path d="M15 3a6 6 0 0 1 6 6" /></svg> {{instituteData.phone}} </a>
+                                          </div>
+                                          <div class="col-md-6 pr-0">
+                                              <a href="https://wa.me/{{instituteData.phone}}" target="_blank" class="font-12 d-block text-dark" style="color: #6900FF; font-family: 'OpenSauceOneBold';"><svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="#25D366"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" /><path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" /></svg> {{instituteData.phone}} </a>
+                                          </div>
+                                      </div>
+                                  </div>
+
+                                  <!-- Salon address end -->
+                                  
+
+
+
+                                  <!-- empty cart start -->
+
+                                   <!-- <div class="card border p-3 rounded mb-3" *ngIf="!IsCartExist">
+                                      <svg width="100" height="100" viewBox="0 0 128 96" fill="none" xmlns="http://www.w3.org/2000/svg" class="d-block ml-auto mr-auto text-center"><path fill-rule="evenodd" clip-rule="evenodd" d="M77.5 34a.5.5 0 01-.5.5h-2.5V30a.5.5 0 011 0v3.5H77a.5.5 0 01.5.5z" fill="#FFD47F"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M79.5 34a.5.5 0 01-.5.5h-2.5V30a.5.5 0 011 0v3.5H79a.5.5 0 01.5.5z" fill="#FFD47F"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M73 69a1 1 0 011 1v1H61a1 1 0 00-1 1v7h-2v-7a3 3 0 013-3h12zm3 2h9a1 1 0 011 1v7h2v-7a3 3 0 00-3-3h-9.17c.11.313.17.65.17 1v1z" fill="#E2E2E2"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M60 60v10h-2V60h2z" fill="#E2E2E2"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M72 72a1 1 0 00-1-1H47a1 1 0 00-1 1v7h-2v-7a3 3 0 013-3h24a3 3 0 013 3v7h-2v-7z" fill="#E2E2E2"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M74 70v9h-2v-9h2z" fill="#E2E2E2"></path><path d="M50 79a5 5 0 11-10 0 5 5 0 0110 0zM64 79a5 5 0 11-10 0 5 5 0 0110 0zM78 79a5 5 0 11-10 0 5 5 0 0110 0zM92 79a5 5 0 11-10 0 5 5 0 0110 0z" fill="#757575"></path><path d="M48 79a3 3 0 11-6 0 3 3 0 016 0zM62 79a3 3 0 11-6 0 3 3 0 016 0zM76 79a3 3 0 11-6 0 3 3 0 016 0zM90 79a3 3 0 11-6 0 3 3 0 016 0z" fill="#EEE"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M74 60v10h-2V60h2z" fill="#E2E2E2"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M30.832 25.445l8 12-1.664 1.11-8-12 1.664-1.11zm16 0l8 12-1.664 1.11-8-12 1.664-1.11z" fill="#CBCBCB"></path><path d="M44 34h52l-5.694 30.369A2 2 0 0188.34 66H53.32a4 4 0 01-3.932-3.263L44 34z" fill="#CBCBCB"></path><path d="M34 34h48l-6 32H41.66a2 2 0 01-1.966-1.631L34 34z" fill="#E2E2E2"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M46 40h-2v7.059h2V40zm0 12.941h-2V60h2v-7.059zM50 40h2v7.059h-2V40zm2 12.941h-2V60h2v-7.059zM56 40h2v7.059h-2V40zm2 12.941h-2V60h2v-7.059zM62 40h2v7.059h-2V40zm2 12.941h-2V60h2v-7.059zM68 40h2v7.059h-2V40zm2 12.941h-2V60h2v-7.059z" fill="#fff"></path><path d="M24 24h28v4H24v-4z" fill="#97674E"></path><path d="M78 20h6v4a6 6 0 01-6 6V20zM78 15a3 3 0 116 0v5h-6v-5zM78 30V18L66 30h12z" fill="#997BED"></path><path d="M88 16l-4-1v2l4-1z" fill="#FFD47F"></path><path d="M81 15a1 1 0 112 0 1 1 0 01-2 0z" fill="#0F0F0F"></path><path d="M72 30h-6l12-12v6a6 6 0 01-6 6z" fill="#6E42E5"></path></svg>
+                                      <span class="text-muted font-12 d-block text-center">No items in your cart </span>
+                                  </div> -->
+
+                                  <!-- empty cart end -->
+
+                                  <!-- cart added start -->
+
+                                  <!-- <div class="card border-0 rounded mb-3">
+                                      <h4 class="ff-bold font-18">Payment types </h4>
+                                      <img src="img/payment-types.jpg" class="w-100">
+                                  </div> -->
+
+                                  <!-- empty added end -->
+
+                              </div>
+                          </div> 
+
+
+                      </div>
+                  </div>
+              </div>
+
+              <hr class="mt-5 mb-5 w-100">
+              <div class="row">
+                  <div class="col-md-12 mb-4">
+                      <h2 class="font-24 ff-bold mb-3 text-capitalize">Frequently asked questions </h2>
+                      <div class="accordion" id="accordionExample">
+                        <div class="card">
+                          <div class="card-head" id="heading0">
+                            <h2 class="mb-0 collapsed font-14 ff-bold p-4 dv_accodion_h2" data-toggle="collapse" data-target="#collapse0" aria-expanded="false" aria-controls="collapse0">
+                              What is CIBTAC beauty therapy?
+                            </h2>
+                          </div>
+                          <div id="collapse0" class="collapse" aria-labelledby="heading0" data-parent="#accordionExample">
+                            <div class="card-body font-13 ff-bold text-muted border-top">
+                              CIBTAC Beauty Therapy is a comprehensive training program designed to provide individuals with the knowledge, skills, and qualifications needed to pursue a career in the beauty therapy industry, offers internationally recognized certifications and diplomas in beauty therapy,
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-head" id="heading1">
+                            <h2 class="mb-0 collapsed font-14 ff-bold p-4 dv_accodion_h2" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                              What are the benefits of obtaining a CIBTAC qualification in beauty therapy? 
+                            </h2>
+                          </div>
+                          <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordionExample">
+                            <div class="card-body font-13 ff-bold text-muted border-top">
+                              CIBTAC qualification in beauty therapy provides individuals with a solid foundation in theory, practical skills, and professionalism, equipping them for success in this dynamic and rewarding industry, highly respected and recognized worldwide, enhancing your credibility and employability in the beauty therapy industry. 
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-head" id="heading2">
+                            <h2 class="mb-0 collapsed font-14 ff-bold p-4 dv_accodion_h2" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                              How long does it take to complete CIBTAC beauty therapy course?
+                            </h2>
+                          </div>
+                          <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordionExample">
+                            <div class="card-body font-13 ff-bold text-muted border-top">
+                              CIBTAC beauty treatment course lasts 12 months, with an 8-month Fast-track program available for those who want to complete their qualifications in a shorter time frame.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-head" id="heading0">
+                            <h2 class="mb-0 collapsed font-14 ff-bold p-4 dv_accodion_h2" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                              Do you offer online course?
+                            </h2>
+                          </div>
+                          <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordionExample">
+                            <div class="card-body font-13 ff-bold text-muted border-top">
+                              Yes, we started to offer online components or blended learning options for certain elements of our courses, such as theory-based modules, lectures, or assessments. Keep in mind that even if online options are available, there may still be practical components or assessments that require in-person attendance or supervised training to meet CIDESCO's standards and requirements.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-head" id="heading4">
+                            <h2 class="mb-0 collapsed font-14 ff-bold p-4 dv_accodion_h2" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                              Do you provide internships, and what is the price?
+                            </h2>
+                          </div>
+                          <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionExample">
+                            <div class="card-body font-13 ff-bold text-muted border-top">
+                              Yes, we offer internships as part of the beauty therapy program. Our exclusive program provides comprehensive experience, preparing you for future opportunities in salons, spas, clinics, or medical facilities.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-head" id="heading0">
+                            <h2 class="mb-0 collapsed font-14 ff-bold p-4 dv_accodion_h2" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                              Is your academy and beauty therapy diploma approved by DHA?-
+                            </h2>
+                          </div>
+                          <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordionExample">
+                            <div class="card-body font-13 ff-bold text-muted border-top">
+                              Yes, our academy and programs are approved by the Dubai Health Authority (DHA). Upon receiving your diploma and gaining experience, you can start applying for the DHA license. We have a licensing team at the academy to assist with the application and process of your DHA license.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-head" id="heading6">
+                            <h2 class="mb-0 collapsed font-14 ff-bold p-4 dv_accodion_h2" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                              Why do I need the DHA license?
+                            </h2>
+                          </div>
+                          <div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#accordionExample">
+                            <div class="card-body font-13 ff-bold text-muted border-top">
+                              DHA license is required if you intend to work in the medical field, such as clinics, medical facilities, or alongside doctors and dermatologists, whether as a beauty/skin therapist or massage/body therapist. More information about the license can be found on the DHA website or by visiting their office. 
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-head" id="heading7">
+                            <h2 class="mb-0 collapsed font-14 ff-bold p-4 dv_accodion_h2" data-toggle="collapse" data-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                              When will I receive my diploma?
+                            </h2>
+                          </div>
+                          <div id="collapse7" class="collapse" aria-labelledby="heading7" data-parent="#accordionExample">
+                            <div class="card-body font-13 ff-bold text-muted border-top">
+                              You will receive your beauty therapy diploma after successfully completing the 12-month or 8-month fast-track beauty therapy program, which includes passing both the theoretical and practical exams. This diploma is a 1-year certification that qualifies you for applying for the DHA license
+                            </div>
+                          </div>
+                        </div>
+                          
+                      </div>
+                  </div>
+              
+              </div>
+                <div class="row mt-5 mb-5">
+                    <div class="col-md-12 mb-4">
+                                                <a target="_blank" href="https://www.google.com/search?q=mirrors+institute+of+aesthetics&oq=mirrors+insti&gs_lcrp=EgZjaHJvbWUqDAgAECMYJxiABBiKBTIMCAAQIxgnGIAEGIoFMg0IARAuGK8BGMcBGIAEMgYIAhBFGEAyBggDEEUYOTIHCAQQABiABDIICAUQABgWGB4yCAgGEAAYFhgeMgYIBxBFGDyoAgCwAgA&sourceid=chrome&ie=UTF-8#lrd=0x3e5f5d82f729409f:0x47068d732a00f3a0,1,,,,">
+                        
+                         <ik-image path="assets/Academy/g-reviews-academy.jpg" class="w-100"></ik-image>
+                        </a>
+                    </div>
+                     
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mb-4">
+                      <h2 class="font-20 ff-bold mb-3 text-capitalize">CIBTAC Beauty Therapy Course</h2>
+<p class="d-block text-muted font-14 mb-5">
+    CIBTAC beauty therapy course is a comprehensive training program designed to provide individuals with the knowledge, skills, and qualifications needed to pursue a career in the beauty therapy industry, an internationally recognized awarding body that sets standards for beauty therapy education and qualifications. The CIBTAC qualification has been designed to ensure that all candidates are trained to a very high standard that industry requires. CIBTAC diploma provides a continuing education development, and career progression.
+</p>
+<p class="d-block text-muted font-14 mb-3">
+   CIBTAC qualifications are recognized and respected worldwide, providing graduates with opportunities to work in various countries and regions. Employers value CIBTAC certification as a mark of quality and professionalism in the beauty therapy industry.
+It is the board responsible for the syllabus and training of beauty and holistic therapists. It has built up its reputation over 25 years and is renowned for its strict quality control. 
+</p>
+</div>
+</div>
+<div class="row">
+  <div class="col-md-12 mb-4">
+<h2 class="font-18 ff-bold mb-2 pb-2 text-capitalize text-secondary">Course Benefits:</h2>
+<h2 class="font-20 ff-bold mb-2 text-capitalize">CIBTAC Beauty Therapy Diploma, 5 CIBTAC Certificates, MIA Certificate</h2>
+<p class="d-block text-muted font-14 mb-3">•Qualifications are highly respected worldwide and mark of quality and professionalism in beauty therapy industry.</p>
+<p class="d-block text-muted font-14 mb-3">•Maintain rigorous standards for its qualifications, ensuring that accredited training centers meet strict criteria for teaching quality, facilities, and assessment methods.</p>
+<p class="d-block text-muted font-14 mb-3">•Courses cover a wide range of topics, including skincare, makeup, body therapy, and salon management.</p>
+<p class="d-block text-muted font-14 mb-3">•Encourages lifelong learning and professional development</p>
+<p class="d-block text-muted font-14 mb-3">•Holding CIBTAC qualification open doors to a variety of career opportunities in beauty industry.</p>
+</div>
+</div>
+<div class="row">
+  <div class="col-md-12 mb-4">
+<h2 class="font-20 ff-bold mb-3 text-capitalize">OPPORTUNITIES/YOUR FUTURE CAREER</h2>
+<p class="d-block text-muted font-12 mb-5">CIBTAC Beauty therapy offers a wide range of career opportunities, catering to individuals interested in skincare, cosmetics, and overall wellness. With our comprehensive training and qualifications, you can pursue a variety of fascinating career options in the beauty therapy industry. CIBTAC lead to both the coveted and internationally recognize British Confederation of Beauty Therapy and Cosmetology (CIBTAC) qualifications, as well as the highly respected certificate. Some possible career path include: </p>
+</div>
+</div>
+<div class="row">
+  <div class="col-md-12 mb-4">
+<p class="d-block text-muted font-14 mb-3">• Beauty Therapist/Esthetician</p>
+<p class="d-block text-muted font-14 mb-3">• Cosmetic/Beauty Consultant</p>
+<p class="d-block text-muted font-14 mb-3">• Beauty Educator/Trainer</p>
+<p class="d-block text-muted font-14 mb-3">• Spa Manager</p>
+<p class="d-block text-muted font-14 mb-3">• Product Development Specialist</p>
+<p class="d-block text-muted font-14 mb-3">• Wellness Coach</p>
+<p class="d-block text-muted font-14 mb-3">• Salon/Spa Owner</p>
+<p class="d-block text-muted font-14 mb-3">• Beauty Blogger/Influencer</p>
+</div>
+</div>
+<div class="row">
+  <div class="col-md-12 mb-4">
+<h2 class="font-20 ff-bold mb-3 text-capitalize">Requirements to Enroll</h2>
+<p class="d-block text-muted font-14 mb-3">Educational Background: High school diploma or equivalent is often required.</p>
+<p class="d-block text-muted font-14 mb-3">Fees and Tuition: If you're interested, a deposit is necessary to reserve your spot. All fees are due in advance before starting all courses, and payment options with post-dated cheques are available.</p>
+<h2 class="font-20 ff-bold mb-3 pt-2 text-capitalize">INSTALLMENT PLAN AVAILABLE WITH TABBY</h2>
+</div>
+</div>
+              
+
+
+          </div>
+      </div>
+  </div>
+  <app-footer-new></app-footer-new>
+
+  <div class="dv_footer d-block d-md-block d-lg-none d-xl-none d-xxl-none" *ngIf="TotalService!=0">
+    <div class="container">
+
+        <button type="button" (click)="ViewCart()" class="btn btn-default dv_cart_contnue_btn_new mt-0 py-3">
+                                            <span><strong>AED {{TotalPrice}}</strong> <!--<div>AED 250</div>--></span> View Cart
+                                        </button> 
+        <!-- <div class="dv_terms_condition_fixed">By proceeding, you agree to our <a href="#!">T&amp;C</a>, <a href="#!">Privacy</a> &amp; <a href="#!">Cancellation Policy</a></div>
+    </div> -->
+</div>
+</div>
+<div class="modal bottom fade"  id="viewoptionsmodal" tabindex="-1" role="dialog" aria-labelledby="viewoptionsmodal" style="z-index: 99999;">
+    <svg class="display-mobile" data-dismiss="modal" (click)="UpdateOption(optionList[0].sub_category_id)" data-dismiss="modal" style="opacity:1; position: absolute; top: 8%; width: 35px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"></circle><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"></line><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"></line></g></svg>
+    <div class="modal-dialog dv_modal_desktop_mobile_subcategory" role="document" style="border-radius: 25px 25px 0 0; overflow: hidden;" data-dismiss="modal">
+      <div class="modal-header display-desktop text-right" style="border-bottom: none !important; padding: 0; height: 60px;"><img src="assets/img/cancel-img.png" class="display-desktop cursor-pointer" style="z-index: 1; position: absolute; right: 0; top: 6px; cursor:pointer;"></div>
+        
+      <div class="modal-content dv_viewmobile_filter_content border-bottom-radius">
+        <!-- <img src="assets/img/cancel-img.png" data-dismiss="modal" class="display-desktop cursor-pointer" style="z-index: 1; position: absolute; right: 15px; top: 12px; "> -->
+       
+        <!-- <div class="modal-header dv_modal_filter_sm_txt_header">
+          <h5 class="modal-title dv_modal_filter_sm_txt">{{optionCount}} options </h5>
+           <button type="button" class="close" data-dismiss="modal" (click)="UpdateOption(optionList[0].sub_category_id)"  aria-label="Close">
+            <svg style="position: absolute; top: 15px; right: 15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button> 
+        </div> -->
+        <div class="modal-body overflow-auto" style="padding: 0 0 80px 0 !important;">
+          <div class="dv_skelton_load_branches overflow-hidden " *ngIf="optionLoader">
+            <ngx-skeleton-loader [theme]="{ height: '300px', margin: '0 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '15px', width : '50%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '15px', width : '60%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '15px', width : '55%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '30px', width : '18%', position:'absolute', margin: '-15px 0px 10px 61px'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '6px', width : '80%', margin: '0px 0 0 15px'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '6px', width : '80%', margin: '0px 0 0 15px'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '6px', width : '70%', margin: '0px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '15px', width : '40%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '6px', width : '70%', margin: '0px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '6px', width : '70%', margin: '0px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '200px', margin: '0 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '6px', width : '80%', margin: '0px 0 0 15px'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '6px', width : '80%', margin: '0px 0 0 15px'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '6px', width : '70%', margin: '0px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '15px', width : '40%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '6px', width : '70%', margin: '0px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '6px', width : '70%', margin: '0px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+          </div>
+          <ik-image path="{{optionImg}}" class="w-100 mb-4"  *ngIf="!optionLoader"></ik-image>
+        <div class="container dv_w_100_desktop" *ngIf="!optionLoader">
+          <h5 class="modal-title dv_modal_filter_sm_txt">{{optionName}}
+            <!-- <div class="dv_subscategory_per_service_rating">
+              <div class="dv_star_fixed_for_all">
+                <svg style=" width: 20px; height: 20px; fill: #99999950; color: #99999950; top: 15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+              <span>4.7 </span> <strong>145</strong>
+            </div> -->
+          </h5>   
+          <!-- <h5 class="modal-title dv_modal_filter_sm_txt">{{optionName}}<span style=" font-size: 13px; display: block; color: #545454; font-weight: 500; margin: 10px 0 0 0; ">{{optionTotal}} options</span> </h5>         -->
+        </div>
+        <hr class="dv_divider" *ngIf="!optionLoader">
+          <div class="dv_option_services" >
+            <div *ngFor="let item of optionList; index as i">
+            <div class="dv_subscategory_per_service_wrapper border-0"    >
+               <div *ngIf="item.hair_size_image!=null" class="dv_service_gallery_slider">
+                <!-- <img  (error) ="onImgError($event)" src="{{item.service_image}}" alt="" title="{{item.name}}">  -->
+                <ik-image path="{{item.hair_size_image}}"></ik-image>
+              </div> 
+              <div class="dv_service_tag" *ngIf="item.class_type!=null" [ngClass]="{'green': item.class_type=='Regular','goldtag': item.class_type=='Premium'}">{{item.class_type}} </div>
+              <div class="dv_subscategory_per_service_name mt-0">
+                {{item.name}}
+                </div>
+                <!-- <div class="dv_subscategory_per_service_rating">
+                  <div class="dv_star_fixed_for_all">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  </div>
+                  <span>4.7 </span> <strong>145</strong>
+                </div> -->
+                <ul class="dv_sub_service_rate_ul">
+                  <li>AED {{item.original_price}} </li>
+                  <!-- <li>aed {{item.discount_price+item.original_price+60}}  </li> -->
+                  <li>{{item.duration}} Min</li>
+                </ul> 
+                <ul class="dv_sub_service_descrition_ul" [innerHTML]="item.service_content">
+                   </ul>
+                   <div class="dv_plus_minus_wrap" [ngClass]="{'top-0':item.hair_size_image==null}">
+                    <div class="dv_btn_loading_wrap" [ngClass]="{'d-block': isDisable[item.master_service_id]==true}"><div class="dv_btn_loading"></div></div>
+                    <div class="input-group" *ngIf="IsAdded[item.master_service_id] && count[item.master_service_id]">
+                      <span class="input-group-btn">
+                        <button type="button" class="btn btn-default btn-number" data-type="minus" (click)="minusOption(item.master_service_id,item.amount,item.discount_price+item.original_price+60)" data-field="quant[1]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                          </button>
+                      </span>
+                      <input readonly type="text" [(ngModel)]="count[item.master_service_id]" readonly name="quant[1]"   class="form-control input-number" value="{{item.quantity}}" min="1" max="10">
+                      <span class="input-group-btn">
+                          <button type="button" class="btn btn-default btn-number" (click)="plusOption(item.master_service_id,item.amount,item.discount_price+item.original_price+60)" data-type="plus" data-field="quant[1]" >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                          </button>
+                      </span>
+                    </div>
+                  </div>
+                  <span  *ngIf="!IsAdded[item.master_service_id] ||  !count[item.master_service_id]">  <button [ngClass]="{'top-0 mt-0':item.hair_size_image==null}" type="button" class="btn btn-default dv_add_package" (click)="AddToCartOption(item.master_service_id,1,item.original_price,item.discount_price+item.original_price+60,item.name)"> <div class="dv_btn_loading_wrap" [ngClass]="{'d-block': isDisable[item.master_service_id]==true}"><div class="dv_btn_loading"></div></div>add </button></span>
+  
+            
+            </div>
+            <hr class="dv_divider">
+          </div>
+        </div>
+        </div>
+       <div class="dv_footer view_continue_above_modal" style="height: 65px;"  *ngIf="IsCartExist">
+        <div class="container dv_w_100_desktop" >
+          <button type="button"  class="btn btn-default dv_cancel_booking" style="text-align: left;color: #000000; font-weight: 700; border: none;line-height: 30px;"><span style=" background: #ebebeb; display: block; width: 25px; text-align: center; border-radius: 5px; font-size: 12px; padding: 0; float: left; margin: 0 15px 0 0; ">{{totalOption}}</span> AED {{totalAmtOption}} </button>
+          <button type="button" (click)="UpdateOption(optionList[0].sub_category_id)"  data-dismiss="modal"  class="btn btn-default dv_reschedule_booking proceed">Done </button>
+        </div>
+          <!-- <div class="container">
+            <button type="button" class="btn btn-default dv_cancel_booking" style="border-color:#999; color:#999;">{{totalOption}} Added </button>
+            <button type="button"  (click)="UpdateOption(optionList[0].sub_category_id)"  data-dismiss="modal" class="btn btn-default dv_reschedule_booking proceed">Done </button>
+          </div> -->
+        </div> 
+      </div>
+    </div>
+  </div>
+  <div class="modal bottom fade opencategory" id="opencategory" tabindex="-1" role="dialog" aria-labelledby="opencategory"   data-keyboard="false" data-backdrop="static"  style="z-index: 99999;">
+    <svg class="dv_close_cate_popup" data-dismiss="modal" style="position: absolute;bottom: 10%;right: 0;color: #ffffff;width: 40px;height: 40px;left: 0;margin: 0 auto;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+     <div class="modal-dialog dv_modal_top_hr" role="document" style="border-radius: 15px; overflow: hidden; max-width: 100%; width: 90% !important; left: 5%; height: auto; bottom: 132px !important;scale:0; transition: 400ms;">
+      <div class="modal-content dv_viewmobile_filter_content">
+        <div class="modal-body overflow-auto">
+          <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-4 col-4" *ngFor="let item of mainList; index as i">
+              <a   href="javascript:void(0);" (click)="jumpToService(item.sub_category_id)" data-dismiss="modal"   class="dv_sub_cat_a">
+                <ik-image  (error) ="onImgError($event)" path="{{item.sub_category_image}}" class="dv_sub_categori_icon"></ik-image>
+                <!-- <strong class="dv_sub_cat_discount">20% off </strong> -->
+                <span class="dv_sub_cat_name">{{item.sub_category_name}} </span>
+              </a>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="serviceId!='0'" class="modal bottom fade" id="view_page" tabindex="-1"   role="dialog" aria-labelledby="view_page" style="z-index: 99999;">
+    <svg  class="display-mobile"  data-dismiss="modal" (click)="ViewDetailUpdateOption(0)" data-dismiss="modal" style="opacity:1; position: absolute; top: 8%; width: 35px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"></circle><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"></line><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"></line></g></svg>
+<div class="modal-dialog dv_modal_desktop_mobile_subcategory border-bottom-radius dv_modal_top_hr" role="document" style="border-radius: 25px 25px 0 0; overflow: hidden;">
+  <!-- <div class="modal-header display-desktop text-right" style="border-bottom:none !important; padding: 0; height: 60px;">
+    <img _ngcontent-qde-c83="" _ngcontent-non-c83="" src="assets/img/cancel-img.png" data-dismiss="modal" class="display-desktop cursor-pointer" style="z-index: 1;position: absolute;right: 0;top: 6px;">
+  </div> -->
+      <!-- <div class="modal-content dv_viewmobile_filter_content" style="border-top-left-radius: 30px;"> -->
+      
+        <!-- <div class="modal-header dv_modal_filter_sm_txt_header">
+         <h5 class="modal-title dv_modal_filter_sm_txt">Service Detail </h5> 
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <svg style="position: absolute; top: 15px; right: 15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button> 
+        </div> -->
+       
+          <app-service-detail   [Service]="Service" (UpdateService)="UpdateService($event)" (ViewDetailUpdateOption)="ViewDetailUpdateOption($event)"></app-service-detail>
+       
+      <!-- </div> -->
+    </div>
+  </div>
+  <div class="modal bottom fade" id="safetypoints" tabindex="-1" role="dialog" aria-labelledby="safetypoints"   data-keyboard="false" data-backdrop="static"  style="z-index: 99999;">
+    <svg  class="display-mobile" data-dismiss="modal" style="opacity:1; position: absolute; top: 5%; width: 35px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"></circle><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"></line><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"></line></g></svg>
+    <div   class="modal-dialog border-bottom-radius dv_modal_top_hr dv_date_time_desktop"  role="document" style="border-radius: 25px 25px 0 0; overflow: hidden;">
+      <div class="modal-content dv_viewmobile_filter_content">
+        <div class="modal-header dv_modal_filter_sm_txt_header">
+          <h5 class="modal-title dv_modal_filter_sm_txt">Safety First </h5>
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <svg style="position: absolute; top: 15px; right: 15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button> -->
+        </div>
+        <div class="modal-body" style="padding: 30px 0 80px 0 !important; overflow-x: hidden;">
+          <div class="dv_subscategory_wrapper">
+            <ik-image path="./assets/img/safety-points.jpg" class="w-100"></ik-image>
+          </div>
+        </div>
+        <div class="modal-footer modal-footer-fixed view_continue_above_modal">
+          <a href="javascript:void(0);"  data-dismiss="modal"  class="dv_fullwidth_btn active">I Understand </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal bottom fade" id="edit_package" tabindex="-1" role="dialog" aria-labelledby="edit_package"    data-keyboard="false" data-backdrop="static" style="z-index: 99999;">
+    <svg data-dismiss="modal" (click)="UpdateEdit(editList[0].sub_category_id)" data-dismiss="modal" style="opacity:1; position: absolute; top: 8%; width: 35px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"></circle><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"></line><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"></line></g></svg>
+    
+    <div class="modal-dialog dv_modal_top_hr" role="document" style="border-radius: 25px 25px 0 0; overflow: hidden;">
+      <div class="modal-content dv_viewmobile_filter_content">
+        <!-- <div class="modal-header dv_modal_filter_sm_txt_header">
+          <h5 class="modal-title dv_modal_filter_sm_txt">Edit Package </h5>
+      
+        </div> -->
+        <div class="modal-body overflow-auto" style="padding: 0 0 80px 0 !important;">
+          
+    <div class="dv_skelton_load_branches overflow-hidden " style="height:100%; padding: initial; position: fixed; top: 0; z-index: 10; width: 100%; background: #ffffff;" *ngIf="IsPreLoading">
+      <ngx-skeleton-loader [theme]="{ height: '200px', width : '100%', margin: '0 0 15px 0'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '15px', width : '60%', display:'block', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '15px', width : '30%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '30px', width : '18%', right:'15px', position:'absolute', margin: '-15px 0px 10px 61px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '1px', width : '95%', margin: '0px 0 15 15px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '15px', width : '50%', margin: '10px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '15px', width : '60%', display:'block', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '15px', width : '30%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '30px', width : '18%', right:'15px', position:'absolute', margin: '-15px 0px 10px 61px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '1px', width : '95%', margin: '0px 0 15 15px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '15px', width : '50%', margin: '10px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '15px', width : '60%', display:'block', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '15px', width : '30%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '30px', width : '18%', right:'15px', position:'absolute', margin: '-15px 0px 10px 61px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '1px', width : '95%', margin: '0px 0 15 15px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '15px', width : '50%', margin: '10px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '15px', width : '60%', display:'block', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '15px', width : '30%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '30px', width : '18%', right:'15px', position:'absolute', margin: '-15px 0px 10px 61px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '1px', width : '95%', margin: '0px 0 15 15px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '15px', width : '50%', margin: '10px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '15px', width : '60%', display:'block', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '15px', width : '30%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '30px', width : '18%', right:'15px', position:'absolute', margin: '-15px 0px 10px 61px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '1px', width : '95%', margin: '0px 0 15 15px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '15px', width : '50%', margin: '10px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '15px', width : '60%', display:'block', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '15px', width : '30%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '30px', width : '18%', right:'15px', position:'absolute', margin: '-15px 0px 10px 61px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '1px', width : '95%', margin: '0px 0 15 15px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '15px', width : '50%', margin: '10px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '15px', width : '60%', display:'block', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '15px', width : '30%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '30px', width : '18%', right:'15px', position:'absolute', margin: '-15px 0px 10px 61px'}" appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader [theme]="{ height: '1px', width : '95%', margin: '0px 0 15 15px'}" appearance="line"></ngx-skeleton-loader>
+    </div>
+          <div  *ngIf="!IsPreLoading">
+            <ik-image path="{{editImg}}" class="w-100 mb-4"></ik-image>
+          <div class="container">
+            <h5 class="modal-title dv_modal_filter_sm_txt">{{editName}}
+              <!-- <div class="dv_subscategory_per_service_rating">
+                <div class="dv_star_fixed_for_all">
+                  <svg style=" width: 20px; height: 20px; fill: #99999950; color: #99999950; top: 15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <span>4.7 </span> <strong>145</strong>
+              </div> -->
+            </h5>   
+             </div>
+          <hr class="dv_divider">
+          <div class="dv_option_services">
+            <div *ngFor="let item of editList; index as i">
+            <div class="dv_subscategory_per_service_wrapper border-0"    >
+              <div *ngIf="item.service_image!=null" class="dv_service_gallery_slider">
+                <ik-image  (error) ="onImgError($event)" path="{{item.service_image}}" alt="" title="{{item.name}}"> </ik-image>
+              
+              </div>
+              <div class="dv_service_tag" *ngIf="item.class_type!=null" [ngClass]="{'green': item.class_type=='Regular','goldtag': item.class_type=='Premium'}">{{item.class_type}} </div>
+              <div class="dv_subscategory_per_service_name mt-0">
+                {{item.name}}
+                </div>
+                <!-- <div class="dv_subscategory_per_service_rating">
+                  <div class="dv_star_fixed_for_all">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  </div>
+                  <span>4.7 </span> <strong>145</strong>
+                </div> -->
+                <ul class="dv_sub_service_rate_ul">
+                  <li>AED {{item.original_price}} </li>
+                  <li style=" text-transform: uppercase; text-decoration: line-through; ">aed {{item.discount_price+item.original_price+60}} </li> 
+                  <li>{{item.duration}} Min</li>
+                 </ul> 
+                 <div class="dv_discount_for_packages"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.07 14.07"><path style="fill:#4500ff;" d="M14.07,1.13V6.4c-.07,.31-.22,.58-.45,.81-2.09,2.08-4.17,4.16-6.25,6.25-.28,.28-.57,.53-.97,.6h-.36c-.41-.08-.69-.33-.97-.62-1.48-1.49-2.96-2.97-4.45-4.45-.28-.28-.54-.57-.62-.97v-.36c.07-.41,.33-.7,.61-.98C2.64,4.66,4.67,2.63,6.7,.6,6.97,.32,7.26,.07,7.66,0,9.42,0,11.18,0,12.94,0c.03,0,.05,.02,.08,.02,.49,.11,.82,.41,.99,.88,.03,.07,.04,.15,.06,.22ZM7.03,7.44c.87,0,1.75,0,2.62,0,.28,0,.46-.2,.43-.46-.03-.22-.2-.36-.46-.36-1.73,0-3.46,0-5.19,0-.03,0-.06,0-.1,0-.16,.02-.27,.1-.34,.25-.06,.15-.04,.29,.05,.41,.09,.12,.22,.16,.38,.16,.86,0,1.73,0,2.59,0Zm0,.79c-.72,0-1.3,.57-1.3,1.28,0,.71,.57,1.3,1.28,1.3,.72,0,1.31-.57,1.31-1.29,0-.72-.57-1.29-1.29-1.29Zm-.02-2.41c.72,0,1.3-.57,1.3-1.28,0-.72-.57-1.3-1.27-1.31-.72,0-1.31,.57-1.31,1.29,0,.72,.57,1.29,1.28,1.3Zm4.02-3.22c0,.23,.18,.41,.4,.42,.23,0,.41-.18,.42-.4,0-.22-.18-.41-.41-.42-.22,0-.41,.18-.42,.41Z"></path><path style="fill:#4500ff;" d="M7.5,9.53c0,.26-.21,.47-.47,.46-.26,0-.47-.21-.46-.48,0-.26,.21-.46,.47-.46,.26,0,.47,.21,.46,.47Z"></path><path style="fill:#4500ff;" d="M7.5,4.54c0,.26-.21,.47-.47,.47-.26,0-.47-.21-.47-.47,0-.26,.21-.47,.47-.47,.26,0,.47,.21,.47,.47Z"></path></svg> 29% off above AED139</div>
+                <ul class="dv_sub_service_descrition_ul" [innerHTML]="item.service_content">
+                   </ul>
+                   <div class="dv_plus_minus_wrap" [ngClass]="{'top-0':item.service_image==null}">
+                    <div class="dv_btn_loading_wrap" [ngClass]="{'d-block': isDisable[item.master_service_id]==true}"><div class="dv_btn_loading"></div></div>
+                    <div class="input-group" *ngIf="IsAdded[item.master_service_id] && count[item.master_service_id]">
+                      <span class="input-group-btn">
+                          <button type="button" class="btn btn-default btn-number" data-type="minus" (click)="minusEdit(item.master_service_id,item.amount,item.discount_price+item.original_price+60)" data-field="quant[1]"  >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                          </button>
+                      </span>
+                      <input type="text" [(ngModel)]="count[item.master_service_id]" readonly name="quant[1]"  class="form-control input-number" value="{{item.quantity}}" min="1" max="10">
+                      <span class="input-group-btn">
+                          <button type="button" class="btn btn-default btn-number" (click)="plusEdit(item.master_service_id,item.amount,item.discount_price+item.original_price+60)" data-type="plus" data-field="quant[1]" >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                          </button>
+                      </span>
+                    </div>
+                  </div>
+                  <span  *ngIf="!IsAdded[item.master_service_id] ||  !count[item.master_service_id]">  <button [ngClass]="{'top-0 mt-0':item.service_image==null}" type="button" class="btn btn-default dv_add_package" (click)="AddToCartEdit(item.master_service_id,1,item.original_price,item.discount_price+item.original_price+60,item.name)"> <div class="dv_btn_loading_wrap" [ngClass]="{'d-block': isDisable[item.master_service_id]==true}"><div class="dv_btn_loading"></div></div>add </button></span>
+  
+            
+            </div>
+            <hr class="dv_divider">
+          </div>
+        </div>
+          </div>
+        </div>
+        <div class="dv_footer view_continue_above_modal" style="height: 65px;"  *ngIf="IsCartExist">
+          <div class="container" >
+            <button type="button"  class="btn btn-default dv_cancel_booking" style="text-align: left;color: #000000; font-weight: 700; border: none;line-height: 30px;"><span style=" background: #ebebeb; display: block; width: 25px; text-align: center; border-radius: 5px; font-size: 12px; padding: 0; float: left; margin: 0 15px 0 0; ">{{totalEdit}}</span> AED {{totalAmtEdit}} </button>
+            <button type="button" (click)="UpdateEdit(editList[0].sub_category_id)"  data-dismiss="modal"  class="btn btn-default dv_reschedule_booking proceed">Add to cart </button>
+          </div>
+      </div>
+    </div>
+  </div>
+  </div>   
+  
+  <div class="modal bottom fade" id="meetartist" tabindex="-1" role="dialog" aria-labelledby="meetartist" style="z-index: 99999;">
+    <svg   class="display-mobile"  data-dismiss="modal" style=" position: absolute; top: 8%; width: 35px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><circle style="fill:#fff;" cx="7.43" cy="7.43" r="7.43"/><g><line style="fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;" x1="10.02" y1="4.85" x2="4.85" y2="10.02"/><line style="fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;" x1="4.85" y1="4.85" x2="10.02" y2="10.02"/></g></svg>
+    <div  class="modal-dialog border-bottom-radius dv_modal_top_hr dv_date_time_desktop"  role="document" style="border-radius: 25px 25px 0 0; overflow: hidden;">
+      <div class="modal-content dv_viewmobile_filter_content">
+        <div class="modal-body overflow-auto" style="padding: 0 0 80px 0 !important;">
+          <div class="dv_sub_cat_banners pt-0">
+            <img src="assets/img/cancel-img.png" data-dismiss="modal" class="display-desktop cursor-pointer" style=" position: fixed; right: 15px; top: 12px; ">
+          <ik-image path="{{meet_artist}}" class="w-100"></ik-image>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  <div class="modal bottom fade" id="lookbook" tabindex="-1" role="dialog" aria-labelledby="lookbook" style="z-index: 99999;">
+    <svg   class="display-mobile"  data-dismiss="modal" style=" position: absolute; top: 8%; width: 35px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><circle style="fill:#fff;" cx="7.43" cy="7.43" r="7.43"/><g><line style="fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;" x1="10.02" y1="4.85" x2="4.85" y2="10.02"/><line style="fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;" x1="4.85" y1="4.85" x2="10.02" y2="10.02"/></g></svg>
+    <div  class="modal-dialog border-bottom-radius dv_modal_top_hr dv_date_time_desktop"  role="document" style="border-radius: 25px 25px 0 0; overflow: hidden;">
+      <div class="modal-content dv_viewmobile_filter_content">
+        <div class="modal-body overflow-auto" style="padding: 0 0 80px 0 !important;">
+          <div class="dv_sub_cat_banners pt-0">
+            <img src="assets/img/cancel-img.png" data-dismiss="modal" class="display-desktop cursor-pointer" style=" position: fixed; right: 15px; top: 12px; ">
+          <ik-image path="{{look_book}}" class="w-100"></ik-image>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+    
+  <div class="modal fade in pr-0" id="edittipamount" role="dialog" data-backdrop="static" data-keyboard="false"  style="z-index: 99999;">
+    <div class="modal-dialog dv_modal_dialog" style=" margin: 5% auto 0 auto; width:85%; ">
+      <div class="modal-content dv_modal_content">
+        <div class="modal-body dv_modal_body">{{locationName}}
+            <h4 class="dv_modal_heading">salon locations </h4>
+            <div class="dv_content_height">
+            <ul class="dv_change_locations_ul">
+              <li  *ngFor="let item of locationList; index as i" (click)="SelectedLocation(item.id)">
+                <a   href="javascript:void(0);"  data-dismiss="modal">
+                  <svg  *ngIf="locationName==item.location_name"   viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle  fill="#027AFF"  cx="10" cy="10" r="10"></circle><path d="M13.817 6.265a.666.666 0 01.91-.148.62.62 0 01.202.801l-.05.08-4.953 6.737a.666.666 0 01-.88.168l-.075-.054-3.742-3.092a.618.618 0 01-.073-.89.667.667 0 01.842-.126l.077.055 3.2 2.644 4.542-6.175z" fill="#FFF" fill-rule="nonzero"></path></g></svg> 
+                  <svg  *ngIf="locationName!=item.location_name"   viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle  fill="#ebebeb"  cx="10" cy="10" r="10"></circle><path d="M13.817 6.265a.666.666 0 01.91-.148.62.62 0 01.202.801l-.05.08-4.953 6.737a.666.666 0 01-.88.168l-.075-.054-3.742-3.092a.618.618 0 01-.073-.89.667.667 0 01.842-.126l.077.055 3.2 2.644 4.542-6.175z" fill="#FFF" fill-rule="nonzero"></path></g></svg>
+                  <ik-image path="assets/img/location/{{item.image}}" class="w-100 border-radius-15"></ik-image>
+                </a>
+              </li>
+           
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="meetexprts">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-transparent">
+            <!-- Modal Header -->
+            <div class="modal-header border-bottom-0">
+                <svg
+                    data-dismiss="modal"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="float-end bg-white"
+                    style="float: right; position: absolute; right: 0; top: -6px; padding: 3px; border-radius: 50%; width: 30px; height: 30px; cursor: pointer;"
+                >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M18 6l-12 12"></path>
+                    <path d="M6 6l12 12"></path>
+                </svg>
+            </div>
+            <div class="modal-body bg-white border-radius-15" style="height: 80vh; overflow: auto;">
+              <ik-image path="./assets/Academy/meet-expert.jpg" class="w-100"></ik-image>
+            </div>
+        </div>
+    </div>
+  </div>

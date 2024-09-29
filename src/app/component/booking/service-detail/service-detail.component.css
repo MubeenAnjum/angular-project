@@ -1,0 +1,91 @@
+.dv_course_duration {
+  margin: 5px 0 0 0;
+  color: #313131;
+  font-size: 11px;
+  padding: 10px 10px 0 0;
+  border-radius: 7px;
+}
+
+.dv_course_duration > svg {
+  width: 18px;
+  height: 18px;
+  margin: 0 10px 0 0;
+  color: #99999990;
+}
+
+span.dv_day_highlight {
+  font-family: "OpenSauceOneBlack";
+  font-size: 15px;
+  margin: 15px 0;
+  text-transform: capitalize;
+  display: block;
+  background: #fff8e5;
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+
+span.dv_day_highlight > svg {
+  width: 27px;
+  height: auto;
+  margin: 0 15px 0 0;
+}
+
+.dv_per_day_procedure > ul.dv_page_details_points.bulletnumber > li::before,
+.dv_per_day_procedure > ul.dv_page_details_points.bulletnumber > li::after {
+  background: #fff8e5;
+}
+
+/*************************** pop up modal ********************************/
+
+.pay-card {
+  background: white;
+  border-radius: 12px;
+  border-left: 4px solid black;
+  box-shadow: 1px -1px 9px 2px #00000012;
+}
+.process-info {
+  max-width: 800px;
+  margin: auto;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 12px;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.process-info h3 {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.process-info p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.process-info .note {
+  background-color: #f9f9f9;
+  border-left: 5px solid #000000;
+  padding: 1rem;
+  font-style: italic;
+  color: #636363;
+  margin-top: 1rem;
+}
+
+.process-info .badge {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 1rem;
+}
+
+.process-info .badge img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
